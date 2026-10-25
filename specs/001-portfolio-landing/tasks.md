@@ -12,7 +12,7 @@
 - [x] **T4. Módulo de generación de URLs de WhatsApp contextuales y suite de pruebas.** RF-7, RF-10, RF-11
   - Hecho cuando: La función `buildWhatsAppUrl` en `src/lib/utils/whatsapp.js` genera los enlaces correctos con los textos predeterminados por perfil/sección y aprueba todos los casos con `node --test tests/whatsapp.test.js`.
 
-- [ ] **T5. Módulo de extracción de atribución y formateo de eventos Meta Pixel con pruebas.** RF-16, RF-17, RF-18, RF-19
+- [x] **T5. Módulo de extracción de atribución y formateo de eventos Meta Pixel con pruebas.** RF-16, RF-17, RF-18, RF-19
   - Hecho cuando: Las funciones `extractAttribution` y `buildMetaEvent` en `src/lib/utils/analytics.js` formatean los eventos `PageView`, `Contact`, `Lead` y `DownloadCV` aprobando la suite con `node --test tests/analytics.test.js`.
 
 - [ ] **T6. Componentes interactivos: Selector de Perfil, Botón Flotante y Formulario de Contacto.** RF-3, RF-10, RF-12, RF-13, RF-15
