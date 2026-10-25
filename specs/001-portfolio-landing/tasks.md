@@ -33,5 +33,5 @@
 - [x] **T11. Adaptación de `whatsapp.js`, `BentoGrid.svelte` y `ProfileSelector.svelte` para los roles `data`, `systems` y `ai`.** RF-3, RF-4, RF-7, RF-10, RF-11
   - Hecho cuando: `whatsapp.js` incluye el número `573023233342` y los contextos `data`, `systems` y `ai` aprobando `node --test tests/whatsapp.test.js`, y `ProfileSelector` y `BentoGrid` renderizan los nuevos datos de `cv_template.json` en la ruta `/`.
 
-- [ ] **T12. Actualización de la landing `/servicios` con el catálogo de soluciones de IA y verificación integral con tests y build.** RF-1, RF-7, RF-8, RF-9, RF-11, RF-18
+- [x] **T12. Actualización de la landing `/servicios` con el catálogo de soluciones de IA y verificación integral con tests y build.** RF-1, RF-7, RF-8, RF-9, RF-11, RF-18
   - Hecho cuando: La ruta `/servicios` presenta la propuesta y catálogo de soluciones con IA, todas las suites de prueba en `tests/*.test.js` pasan en verde con `node --test` y `npm run build` compila sin errores.

@@ -5,9 +5,9 @@
 	import WhatsAppFloatingButton from '$lib/components/WhatsAppFloatingButton.svelte';
 	import MetaPixel from '$lib/components/MetaPixel.svelte';
 	import { extractAttribution } from '$lib/utils/analytics';
-	import { buildWhatsAppUrl } from '$lib/utils/whatsapp';
+	import { buildWhatsAppUrl, DEFAULT_WHATSAPP_PHONE } from '$lib/utils/whatsapp';
 
-	const phoneNumber = '573001234567';
+	const phoneNumber = DEFAULT_WHATSAPP_PHONE;
 	let attribution: Record<string, string> = {};
 
 	onMount(() => {
@@ -28,15 +28,15 @@
 	// Contextual WhatsApp URLs for services (RF-11)
 	$: dataWhatsAppUrl = buildWhatsAppUrl('data', phoneNumber);
 	$: systemsWhatsAppUrl = buildWhatsAppUrl('systems', phoneNumber);
-	$: dataEntryWhatsAppUrl = buildWhatsAppUrl('data-entry', phoneNumber);
+	$: aiWhatsAppUrl = buildWhatsAppUrl('ai', phoneNumber);
 	$: generalWhatsAppUrl = buildWhatsAppUrl('general', phoneNumber);
 </script>
 
 <svelte:head>
-	<title>Servicios Freelance — Santiago Rendón | Datos, Sistemas y Automatización</title>
+	<title>Servicios Especializados — Santiago Rendón | Datos, BI e Inteligencia Artificial</title>
 	<meta
 		name="description"
-		content="Soluciones en Datos, Soporte de Sistemas y Automatización Operativa. Optimiza hasta un 70% del tiempo operativo con dashboards, mantenimiento continuo y digitación masiva."
+		content="Soluciones en Análisis de Datos, Business Intelligence e Ingeniería de Inteligencia Artificial. Optimiza más del 50% de tus tiempos operativos con dashboards ejecutivos y agentes de IA."
 	/>
 </svelte:head>
 
@@ -83,11 +83,11 @@
 		</div>
 
 		<h1 class="text-3xl sm:text-5xl font-black tracking-tight text-foreground leading-tight">
-			Soluciones en Datos, Infraestructura TI y Automatización Operativa para tu Negocio
+			Soluciones en Datos, Business Intelligence e Inteligencia Artificial para tu Negocio
 		</h1>
 
 		<p class="text-base sm:text-xl text-muted-foreground leading-relaxed">
-			Optimiza hasta un <strong>70% del tiempo operativo</strong> con dashboards ejecutivos en tiempo real, soporte continuo de servidores y digitalización masiva sin margen de error.
+			Reduce más de un <strong>+50% del tiempo operativo</strong> con dashboards ejecutivos en tiempo real, arquitecturas de datos confiables y agentes de IA autónomos diseñados a medida.
 		</p>
 
 		<!-- CTAs Primarios -->
@@ -123,12 +123,12 @@
 				Servicios Técnicos Especializados
 			</h2>
 			<p class="text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto">
-				Elige el área donde tu empresa necesita apoyo inmediato o cotiza un paquete integral a medida.
+				Elige el área donde tu empresa necesita acelerar resultados o cotiza una solución técnica integral.
 			</p>
 		</div>
 
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-			<!-- Servicio 1: Análisis de Datos -->
+			<!-- Servicio 1: Análisis de Datos y Dashboards Ejecutivos -->
 			<div class="rounded-3xl bg-card/75 border border-border/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl flex flex-col justify-between hover:border-emerald-500/50 transition-all duration-300">
 				<div>
 					<div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 flex items-center justify-center mb-5">
@@ -137,23 +137,23 @@
 						</svg>
 					</div>
 
-					<h3 class="text-xl font-bold text-foreground">Análisis de Datos & Dashboards</h3>
+					<h3 class="text-xl font-bold text-foreground">Análisis de Datos y Dashboards Ejecutivos</h3>
 					<p class="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-						Diseño de tableros interactivos en Power BI y consultas avanzadas en SQL para monitorear ventas, finanzas, inventarios y KPIs en tiempo real.
+						Diseño de tableros interactivos de alto impacto en Power BI con modelado estrella y DAX avanzado para monitorear ventas, finanzas, inventarios y KPIs en tiempo real.
 					</p>
 
 					<div class="mt-5 space-y-2 text-xs text-foreground/90">
 						<div class="flex items-center gap-2">
 							<span class="text-emerald-500 font-bold">✓</span>
-							<span>Dashboards en Power BI y DAX a medida</span>
+							<span>Dashboards ejecutivos en Power BI con DAX avanzado</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<span class="text-emerald-500 font-bold">✓</span>
-							<span>Extracción y pipelines ETL desde múltiples fuentes</span>
+							<span>Modelado multidimensional de datos (esquemas estrella y copo de nieve)</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<span class="text-emerald-500 font-bold">✓</span>
-							<span>Automatización de reportes periódicos</span>
+							<span>Monitoreo de KPIs y generación de insights para decisiones estratégicas</span>
 						</div>
 					</div>
 				</div>
@@ -173,7 +173,7 @@
 				</div>
 			</div>
 
-			<!-- Servicio 2: Soporte y Sistemas -->
+			<!-- Servicio 2: Business Intelligence & Arquitectura de Datos -->
 			<div class="rounded-3xl bg-card/75 border border-border/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl flex flex-col justify-between hover:border-sky-500/50 transition-all duration-300">
 				<div>
 					<div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-500 flex items-center justify-center mb-5">
@@ -182,23 +182,23 @@
 						</svg>
 					</div>
 
-					<h3 class="text-xl font-bold text-foreground">Soporte TI e Infraestructura</h3>
+					<h3 class="text-xl font-bold text-foreground">Business Intelligence & Arquitectura de Datos</h3>
 					<p class="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-						Mantenimiento preventivo, administración de servidores Linux/Windows, redes locales, VPNs y resolución ágil de incidencias técnicas para empresas.
+						Pipelines ETL robustos en Python, estructuración de bases de datos relacionales, consumo e integración de APIs REST y optimización SQL para datos limpios y consistentes.
 					</p>
 
 					<div class="mt-5 space-y-2 text-xs text-foreground/90">
 						<div class="flex items-center gap-2">
 							<span class="text-sky-500 font-bold">✓</span>
-							<span>Soporte a usuarios y Helpdesk remoto/presencial</span>
+							<span>Pipelines de ingesta y transformación ETL/ELT con Python y SQL</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<span class="text-sky-500 font-bold">✓</span>
-							<span>Configuración de redes, firewalls y políticas Active Directory</span>
+							<span>Estructuración y optimización de bases de datos relacionales</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<span class="text-sky-500 font-bold">✓</span>
-							<span>Respaldo automático de bases de datos y archivos</span>
+							<span>Integración de APIs REST y automatización de flujos de datos</span>
 						</div>
 					</div>
 				</div>
@@ -210,7 +210,7 @@
 						rel="noopener noreferrer"
 						class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/30 hover:bg-sky-500 hover:text-white transition-all flex items-center justify-center gap-2"
 					>
-						<span>Cotizar Soporte TI</span>
+						<span>Cotizar Solución BI</span>
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
 							<path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
 						</svg>
@@ -218,44 +218,46 @@
 				</div>
 			</div>
 
-			<!-- Servicio 3: Data Entry y Automatización -->
-			<div class="rounded-3xl bg-card/75 border border-border/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl flex flex-col justify-between hover:border-amber-500/50 transition-all duration-300">
+			<!-- Servicio 3: Ingeniería de Inteligencia Artificial & Automatización -->
+			<div class="rounded-3xl bg-card/75 border border-border/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl flex flex-col justify-between hover:border-violet-500/50 transition-all duration-300">
 				<div>
-					<div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center mb-5">
+					<div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 text-violet-500 flex items-center justify-center mb-5">
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+							<rect x="4" y="4" width="16" height="16" rx="2" />
+							<rect x="9" y="9" width="6" height="6" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
 						</svg>
 					</div>
 
-					<h3 class="text-xl font-bold text-foreground">Data Entry & Automatización</h3>
+					<h3 class="text-xl font-bold text-foreground">Ingeniería de Inteligencia Artificial & Automatización</h3>
 					<p class="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-						Procesamiento y digitación veloz de información, limpieza masiva de bases de datos y creación de macros en Excel y Google Sheets.
+						Agentes de IA autónomos, soluciones con IA Generativa y LLMs, automatización robótica de procesos, web scraping masivo y microservicios escalables en nube (AWS / GCP).
 					</p>
 
 					<div class="mt-5 space-y-2 text-xs text-foreground/90">
 						<div class="flex items-center gap-2">
-							<span class="text-amber-500 font-bold">✓</span>
-							<span>Velocidad de digitación superior a 70 WPM con 99.9% precisión</span>
+							<span class="text-violet-500 font-bold">✓</span>
+							<span>Agentes de IA y pipelines de IA Generativa con LLMs</span>
 						</div>
 						<div class="flex items-center gap-2">
-							<span class="text-amber-500 font-bold">✓</span>
-							<span>Depuración, normalización y deduplicación masiva</span>
+							<span class="text-violet-500 font-bold">✓</span>
+							<span>Automatización de tareas repetitivas y web scraping masivo</span>
 						</div>
 						<div class="flex items-center gap-2">
-							<span class="text-amber-500 font-bold">✓</span>
-							<span>Macros y Apps Script para planillas automatizadas</span>
+							<span class="text-violet-500 font-bold">✓</span>
+							<span>Arquitecturas serverless y despliegues en nube (AWS / GCP)</span>
 						</div>
 					</div>
 				</div>
 
 				<div class="mt-8 pt-4 border-t border-border/50">
 					<a
-						href={dataEntryWhatsAppUrl}
+						href={aiWhatsAppUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 hover:bg-amber-500 hover:text-white transition-all flex items-center justify-center gap-2"
+						class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/30 hover:bg-violet-500 hover:text-white transition-all flex items-center justify-center gap-2"
 					>
-						<span>Cotizar Data Entry</span>
+						<span>Cotizar Solución de IA</span>
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
 							<path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
 						</svg>
@@ -272,32 +274,32 @@
 				Impacto y Resultados Medibles
 			</h2>
 			<p class="text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto">
-				Métricas concretas obtenidas en optimización operativa para clientes y empresas.
+				Métricas concretas obtenidas en optimización técnica y operativa para empresas y organizaciones.
 			</p>
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 			<div class="rounded-3xl bg-card/60 border border-border/80 p-6 text-center shadow-lg">
-				<div class="text-4xl sm:text-5xl font-black text-emerald-500 tracking-tight">65%</div>
-				<h4 class="mt-2 text-base font-bold text-foreground">Ahorro en Tiempos de Reportes</h4>
+				<div class="text-4xl sm:text-5xl font-black text-violet-500 tracking-tight">+50%</div>
+				<h4 class="mt-2 text-base font-bold text-foreground">Reducción de Tiempos Operativos</h4>
 				<p class="mt-2 text-xs text-muted-foreground">
-					Automatización de reportes gerenciales pasando de 12 horas semanales a menos de 4 mediante Power BI y SQL.
+					Implementación de agentes de IA y automatizaciones inteligentes para tareas analíticas y flujos de trabajo repetitivos.
 				</p>
 			</div>
 
 			<div class="rounded-3xl bg-card/60 border border-border/80 p-6 text-center shadow-lg">
-				<div class="text-4xl sm:text-5xl font-black text-sky-500 tracking-tight">&lt;45 min</div>
-				<h4 class="mt-2 text-base font-bold text-foreground">Tiempo Promedio de Respuesta</h4>
+				<div class="text-4xl sm:text-5xl font-black text-emerald-500 tracking-tight">100%</div>
+				<h4 class="mt-2 text-base font-bold text-foreground">Dashboards en Tiempo Real</h4>
 				<p class="mt-2 text-xs text-muted-foreground">
-					SLA cumplido en más de 1,500 incidencias de infraestructura y estaciones de trabajo de usuarios finales.
+					Visibilidad continua y sin retrasos de métricas financieras, comerciales y operativas para comités gerenciales.
 				</p>
 			</div>
 
 			<div class="rounded-3xl bg-card/60 border border-border/80 p-6 text-center shadow-lg">
-				<div class="text-4xl sm:text-5xl font-black text-amber-500 tracking-tight">99.9%</div>
-				<h4 class="mt-2 text-base font-bold text-foreground">Precisión en Carga Masiva</h4>
+				<div class="text-4xl sm:text-5xl font-black text-sky-500 tracking-tight">99.9%</div>
+				<h4 class="mt-2 text-base font-bold text-foreground">Confiabilidad en Datos</h4>
 				<p class="mt-2 text-xs text-muted-foreground">
-					Más de 250,000 registros depurados y cargados en sistemas ERP con doble validación y cero inconsistencias.
+					Pipelines ETL en Python y estructuras SQL robustas con validaciones automatizadas y sincronización sin discrepancias.
 				</p>
 			</div>
 		</div>
@@ -316,7 +318,7 @@
 
 <!-- Pie de página comercial sobrio -->
 <footer class="border-t border-border/70 py-8 px-4 text-center text-xs text-muted-foreground bg-card/40">
-	<p>© {new Date().getFullYear()} Santiago Rendón • Servicios en Datos, Infraestructura TI y Automatización</p>
+	<p>© {new Date().getFullYear()} Santiago Rendón • Servicios en Datos, BI e Inteligencia Artificial</p>
 	<p class="mt-1">
 		<a href="/" class="hover:text-foreground underline underline-offset-4">Ir al Portafolio Profesional</a>
 	</p>
