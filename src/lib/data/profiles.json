@@ -1,0 +1,154 @@
+{
+  "profiles": [
+    {
+      "id": "data",
+      "roleName": "Analista de Datos",
+      "title": "Data Analyst & Business Intelligence Specialist",
+      "summary": "Especialista en extracción, modelado, análisis y visualización de datos de negocio. Amplia trayectoria transformando datos complejos y dispersos en tableros interactivos de Power BI y modelos analíticos que impulsan la toma de decisiones estratégicas, optimizan inventarios y reducen costos operativos.",
+      "skills": [
+        "SQL (PostgreSQL, MySQL, SQL Server)",
+        "Power BI & DAX Avanzado",
+        "Python (Pandas, NumPy, Matplotlib)",
+        "Modelado de Datos & ETL",
+        "Excel Avanzado & Power Query",
+        "Definición y Seguimiento de KPIs",
+        "Storytelling con Datos"
+      ],
+      "experience": [
+        {
+          "company": "Soluciones Analíticas Globales",
+          "role": "Analista de Inteligencia de Negocios Senior",
+          "period": "2022 - Presente",
+          "achievements": [
+            "Diseño e implementación de más de 20 dashboards interactivos en Power BI reduciendo el tiempo de generación de reportes gerenciales en un 65%.",
+            "Automatización de procesos ETL en SQL Server y Python para integrar ventas, compras y logística de 4 fuentes heterogéneas.",
+            "Optimización de modelos relacionales estrella/copo de nieve reduciendo tiempos de refresco de consultas en un 40%."
+          ]
+        },
+        {
+          "company": "Consultoría Empresarial y Datos",
+          "role": "Analista de Datos y Reportería",
+          "period": "2020 - 2022",
+          "achievements": [
+            "Construcción de tableros de control financiero con fórmulas DAX complejas para control presupuestario mensual.",
+            "Detección de patrones de fuga de clientes mediante análisis exploratorio en Python con una precisión predictiva del 82%."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "Dashboard Ejecutivo de Ventas & Forecasting Comercial",
+          "description": "Visualización integral de KPIs comerciales en tiempo real con proyección de demanda, análisis de margen bruto por línea de producto y alertas automatizadas.",
+          "technologies": ["Power BI", "DAX", "SQL Server", "Power Query"]
+        },
+        {
+          "name": "Pipeline Automatizado de Conciliación de Pagos",
+          "description": "Script en Python y PostgreSQL para conciliar diariamente miles de transacciones bancarias contra pasarelas de pago digitales, reduciendo discrepancias a menos del 0.05%.",
+          "technologies": ["Python", "Pandas", "PostgreSQL", "Cron"]
+        }
+      ],
+      "pdfUrl": "/cv/cv-analista-datos.pdf",
+      "whatsappContext": "data"
+    },
+    {
+      "id": "systems",
+      "roleName": "Soporte y Sistemas",
+      "title": "Especialista en Soporte TI, Redes e Infraestructura",
+      "summary": "Profesional con sólida experiencia en administración de infraestructura tecnológica, diagnóstico y resolución proactiva de incidencias hardware/software, configuración de redes TCP/IP, servidores Linux/Windows y aseguramiento de continuidad operativa en entornos corporativos de alta demanda.",
+      "skills": [
+        "Soporte Helpdesk L1/L2/L3",
+        "Linux Server (Debian/Ubuntu, RHEL)",
+        "Windows Server & Active Directory",
+        "Redes TCP/IP, VLANs, VPN & Firewall",
+        "Mantenimiento Preventivo y Correctivo",
+        "Gestión de Backups y Recuperación ante Desastres",
+        "Virtualización (Proxmox, VMware, VirtualBox)"
+      ],
+      "experience": [
+        {
+          "company": "Infraestructura & Servicios TI",
+          "role": "Especialista de Soporte TI e Infraestructura",
+          "period": "2021 - Presente",
+          "achievements": [
+            "Mantenimiento de disponibilidad del 99.8% en infraestructura de servidores y estaciones de trabajo para más de 120 usuarios.",
+            "Implementación de políticas de grupo (GPO) en Active Directory y segmentación de red VLAN mitigando incidentes de seguridad en un 50%.",
+            "Resolución de más de 1,500 tickets de soporte técnico cumpliendo SLA promedio inferior a 45 minutos."
+          ]
+        },
+        {
+          "company": "Soporte Corporativo & Redes",
+          "role": "Técnico de Soporte de Sistemas",
+          "period": "2019 - 2021",
+          "achievements": [
+            "Despliegue y mantenimiento preventivo periódico de parque informático de más de 80 equipos de cómputo e impresoras de red.",
+            "Configuración de copias de seguridad automatizadas en NAS y almacenamiento en la nube para resguardo de información crítica."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "Migración y Modernización de Red Corporativa",
+          "description": "Diseño y despliegue de cableado estructurado, switches gestionables con VLANs dedicadas, enlaces VPN seguros y Wi-Fi corporativo con autenticación centralizada.",
+          "technologies": ["Cisco / MikroTik", "VLANs", "OpenVPN", "Active Directory"]
+        },
+        {
+          "name": "Servidor de Monitorización de Servicios TI en Tiempo Real",
+          "description": "Implementación de servidor de monitoreo basado en Zabbix para supervisar switches, enlaces de internet, uso de disco y memoria de servidores con alertas vía Telegram.",
+          "technologies": ["Linux Ubuntu Server", "Zabbix", "SNMP", "Bash Scripting"]
+        }
+      ],
+      "pdfUrl": "/cv/cv-soporte-sistemas.pdf",
+      "whatsappContext": "systems"
+    },
+    {
+      "id": "data-entry",
+      "roleName": "Data Entry y Operaciones",
+      "title": "Especialista en Carga Masiva, Digitalización y Automatización de Datos",
+      "summary": "Especialista en digitalización rápida, depuración exhaustiva, control de calidad y carga masiva de datos con velocidad superior a 70 palabras por minuto y 99.9% de precisión. Experto en automatización de planillas en Excel y Google Sheets mediante macros y scripts para eliminar errores humanos y ahorrar decenas de horas semanales.",
+      "skills": [
+        "Digitación Rápida y Precisa (>70 WPM)",
+        "Excel Avanzado (Macros, VBA, Fórmulas)",
+        "Google Sheets & Apps Script",
+        "Limpieza y Normalización de Datos",
+        "Digitalización y Procesamiento OCR",
+        "Control de Calidad y Validación de Registros",
+        "Carga Masiva en ERPs y CRMs"
+      ],
+      "experience": [
+        {
+          "company": "Operaciones & Gestión Documental",
+          "role": "Especialista Senior en Data Entry y Automatización",
+          "period": "2021 - Presente",
+          "achievements": [
+            "Procesamiento y carga de más de 250,000 registros en sistemas ERP con una tasa de precisión del 99.9%.",
+            "Creación de macros en VBA y scripts en Apps Script que automatizaron la conciliación de planillas, ahorrando más de 15 horas de labor manual semanal.",
+            "Estandarización de protocolos de doble validación para evitar duplicidad e inconsistencia en bases de datos de clientes."
+          ]
+        },
+        {
+          "company": "Servicios de Captura de Información",
+          "role": "Auxiliar de Digitación y Control de Datos",
+          "period": "2019 - 2021",
+          "achievements": [
+            "Digitalización y tabulación de más de 50,000 expedientes físicos a formatos digitales normalizados cumpliendo tiempos de entrega exigentes.",
+            "Depuración de bases de datos de inventario corrigiendo errores de codificación y formatos en más de 12,000 productos."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "Sistema Automatizado de Consolidación de Planillas",
+          "description": "Herramienta en Google Sheets + Apps Script que unifica automáticamente reportes diarios de múltiples sucursales en un único consolidado maestro validando campos requeridos.",
+          "technologies": ["Google Sheets", "Google Apps Script", "JavaScript", "Excel VBA"]
+        },
+        {
+          "name": "Normalizador Masivo de Registros para Migración ERP",
+          "description": "Flujo de depuración y limpieza masiva de datos (nombres, documentos, emails, teléfonos) para preparar 45,000 registros de clientes antes de la migración a un nuevo CRM.",
+          "technologies": ["Excel Power Query", "Python Regex", "CSV / TSV"]
+        }
+      ],
+      "pdfUrl": "/cv/cv-data-entry.pdf",
+      "whatsappContext": "data-entry"
+    }
+  ]
+}
