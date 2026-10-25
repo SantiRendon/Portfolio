@@ -6,7 +6,7 @@
 - [x] **T2. Modelado de datos homogéneo en `profiles.json` y recursos estáticos de CVs.** RF-2, RF-4, RF-5
   - Hecho cuando: `src/lib/data/profiles.json` contiene la estructura completa para los 3 perfiles (*Analista de Datos*, *Soporte y Sistemas*, *Data Entry*) y los archivos PDF correspondientes están ubicados en `static/cv/`.
 
-- [ ] **T3. Módulo de lógica pura de validación de formulario y suite de pruebas.** RF-12, RF-14
+- [x] **T3. Módulo de lógica pura de validación de formulario y suite de pruebas.** RF-12, RF-14
   - Hecho cuando: La función `validateContactForm` en `src/lib/utils/validator.js` valida nombre, email, teléfono opcional y mensaje pasando satisfactoriamente todas las pruebas con `node --test tests/validator.test.js`.
 
 - [ ] **T4. Módulo de generación de URLs de WhatsApp contextuales y suite de pruebas.** RF-7, RF-10, RF-11
