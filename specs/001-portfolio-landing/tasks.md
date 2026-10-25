@@ -18,7 +18,7 @@
 - [x] **T6. Componentes interactivos: Selector de Perfil, Botón Flotante y Formulario de Contacto.** RF-3, RF-10, RF-12, RF-13, RF-15
   - Hecho cuando: Los componentes `ProfileSelector.svelte`, `WhatsAppFloatingButton.svelte` y `ContactForm.svelte` se renderizan de forma accesible, validan datos en tiempo real y gestionan estados de carga.
 
-- [ ] **T7. Componente BentoGrid multi-perfil con descarga de CVs y fallback.** RF-3, RF-4, RF-5, RF-6
+- [x] **T7. Componente BentoGrid multi-perfil con descarga de CVs y fallback.** RF-3, RF-4, RF-5, RF-6
   - Hecho cuando: `BentoGrid.svelte` actualiza dinámicamente las tarjetas de resumen, experiencia, habilidades y proyectos según el rol seleccionado, permitiendo la descarga directa de su PDF con fallback a WhatsApp en caso de error.
 
 - [ ] **T8. Ensamblaje de la Ruta Principal (`/`) con portafolio Bento e integración Pixel.** RF-1, RF-2, RF-3, RF-4, RF-5, RF-16, RF-17, RF-19
