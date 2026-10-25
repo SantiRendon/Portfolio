@@ -29,7 +29,7 @@
 	<title>Santiago Rendón — Portafolio Profesional</title>
 	<meta
 		name="description"
-		content="Portafolio profesional de Santiago Rendón: Analista de Datos, Especialista en Soporte y Sistemas, y Automatización de Operaciones."
+		content="Portafolio profesional de Santiago Rendón: Analista de Datos • Desarrollador BI y Sistemas • Ingeniero de IA"
 	/>
 </svelte:head>
 
@@ -48,12 +48,12 @@
 				Santiago Rendón
 			</h1>
 			<p class="text-lg sm:text-xl font-medium text-primary">
-				Analista de Datos • Soporte TI & Sistemas • Operaciones y Data Entry
+				Analista de Datos • Desarrollador BI y Sistemas • Ingeniero de IA
 			</p>
 		</div>
 
 		<p class="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-			Transformo datos dispersos en decisiones estratégicas con dashboards en Power BI y SQL, garantizo alta disponibilidad en infraestructura de redes y servidores, y optimizo hasta un 70% del tiempo operativo con automatización y digitalización precisa.
+			Transformo datos dispersos en decisiones estratégicas con dashboards ejecutivos en Power BI, construyo pipelines ETL y bases de datos robustas, y desarrollo agentes de Inteligencia Artificial para automatizar operaciones de negocio.
 		</p>
 
 		<!-- CTAs de Conversión y Navegación -->

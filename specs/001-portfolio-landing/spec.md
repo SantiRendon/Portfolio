@@ -1,5 +1,5 @@
 # Spec 001 — Portafolio Profesional y Landing Page de Conversión
-Estado: aprobada
+Estado: implementada
 
 ## Contexto y objetivo
 El usuario requiere una plataforma web personal que cumpla dos funciones complementarias de negocio mediante experiencias de navegación diferenciadas:
