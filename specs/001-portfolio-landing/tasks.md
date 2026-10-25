@@ -30,7 +30,7 @@
 - [x] **T10. Migración del esquema `profiles.json` a `cv_template.json` con los datos de los 3 CVs reales y suite `tests/profiles.test.js`.** RF-2, RF-4, RF-5
   - Hecho cuando: `src/lib/data/profiles.json` contiene los 3 perfiles (*Analista de Datos*, *Desarrollador BI y Sistemas*, *Ingeniero de IA*) conformes al esquema de `cv_template.json` (`personal`, `education`, `experience`, `skills`) y pasa satisfactoriamente la nueva suite `node --test tests/profiles.test.js`.
 
-- [ ] **T11. Adaptación de `whatsapp.js`, `BentoGrid.svelte` y `ProfileSelector.svelte` para los roles `data`, `systems` y `ai`.** RF-3, RF-4, RF-7, RF-10, RF-11
+- [x] **T11. Adaptación de `whatsapp.js`, `BentoGrid.svelte` y `ProfileSelector.svelte` para los roles `data`, `systems` y `ai`.** RF-3, RF-4, RF-7, RF-10, RF-11
   - Hecho cuando: `whatsapp.js` incluye el número `573023233342` y los contextos `data`, `systems` y `ai` aprobando `node --test tests/whatsapp.test.js`, y `ProfileSelector` y `BentoGrid` renderizan los nuevos datos de `cv_template.json` en la ruta `/`.
 
 - [ ] **T12. Actualización de la landing `/servicios` con el catálogo de soluciones de IA y verificación integral con tests y build.** RF-1, RF-7, RF-8, RF-9, RF-11, RF-18

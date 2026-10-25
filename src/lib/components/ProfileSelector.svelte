@@ -40,7 +40,7 @@
 <div
 	role="tablist"
 	aria-label="Selector de rol profesional"
-	class="inline-flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-muted/70 border border-border/80 backdrop-blur-md shadow-inner gap-1.5 w-full max-w-2xl mx-auto"
+	class="inline-flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-muted/70 border border-border/80 backdrop-blur-md shadow-inner gap-1.5 w-full max-w-3xl mx-auto"
 >
 	{#each profiles as profile, i (profile.id)}
 		{@const isActive = activeProfileId === profile.id}
@@ -53,11 +53,12 @@
 			tabindex={isActive ? 0 : -1}
 			on:click={() => handleSelect(profile.id)}
 			on:keydown={(e) => handleKeyDown(e, i)}
-			class="flex-1 min-w-[150px] sm:min-w-[170px] inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs sm:text-sm font-medium rounded-xl transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 {isActive
+			class="flex-1 min-w-[160px] sm:min-w-[190px] inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs sm:text-sm font-medium rounded-xl transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 {isActive
 				? 'bg-background text-foreground shadow-sm font-semibold border border-border/90'
 				: 'text-muted-foreground hover:text-foreground hover:bg-background/40'}"
 		>
 			{#if profile.id === 'data'}
+				<!-- Gráfico / Chart para Analista de Datos -->
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="w-4 h-4 text-emerald-500 shrink-0"
@@ -73,6 +74,7 @@
 					<path d="m19 9-5 5-4-4-3 3" />
 				</svg>
 			{:else if profile.id === 'systems'}
+				<!-- Servidores / Base de Datos para Desarrollador BI y Sistemas -->
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="w-4 h-4 text-sky-500 shrink-0"
@@ -90,9 +92,10 @@
 					<line x1="6" x2="6.01" y1="18" y2="18" />
 				</svg>
 			{:else}
+				<!-- Chip / Inteligencia Artificial para Ingeniero de IA -->
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="w-4 h-4 text-amber-500 shrink-0"
+					class="w-4 h-4 text-violet-500 shrink-0"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
@@ -101,10 +104,9 @@
 					stroke-linejoin="round"
 					aria-hidden="true"
 				>
-					<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-					<path d="M14 2v4a2 2 0 0 0 2 2h4" />
-					<path d="M10 13h4" />
-					<path d="M10 17h4" />
+					<rect x="4" y="4" width="16" height="16" rx="2" />
+					<rect x="9" y="9" width="6" height="6" />
+					<path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
 				</svg>
 			{/if}
 			<span class="truncate">{profile.roleName}</span>

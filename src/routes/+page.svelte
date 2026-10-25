@@ -6,11 +6,11 @@
 	import WhatsAppFloatingButton from '$lib/components/WhatsAppFloatingButton.svelte';
 	import MetaPixel from '$lib/components/MetaPixel.svelte';
 	import { extractAttribution } from '$lib/utils/analytics';
-	import { buildWhatsAppUrl } from '$lib/utils/whatsapp';
+	import { buildWhatsAppUrl, DEFAULT_WHATSAPP_PHONE } from '$lib/utils/whatsapp';
 
 	// Default active profile is 'data' (Analista de Datos) per RF-3
 	let activeProfileId: string = 'data';
-	const phoneNumber: string = '573001234567';
+	const phoneNumber: string = DEFAULT_WHATSAPP_PHONE;
 
 	onMount(() => {
 		if (browser) {

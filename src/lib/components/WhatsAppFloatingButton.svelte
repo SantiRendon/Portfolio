@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { buildWhatsAppUrl } from '$lib/utils/whatsapp';
+	import { buildWhatsAppUrl, DEFAULT_WHATSAPP_PHONE } from '$lib/utils/whatsapp';
 	import { buildMetaEvent } from '$lib/utils/analytics';
 
 	export let context: string = 'general';
-	export let phoneNumber: string = '573001234567';
+	export let phoneNumber: string = DEFAULT_WHATSAPP_PHONE;
 	export let customMessage: string | undefined = undefined;
 	export let ariaLabel: string = 'Contactar por WhatsApp';
 	export let showTooltip: boolean = true;
