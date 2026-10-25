@@ -9,7 +9,7 @@
 - [x] **T3. Módulo de lógica pura de validación de formulario y suite de pruebas.** RF-12, RF-14
   - Hecho cuando: La función `validateContactForm` en `src/lib/utils/validator.js` valida nombre, email, teléfono opcional y mensaje pasando satisfactoriamente todas las pruebas con `node --test tests/validator.test.js`.
 
-- [ ] **T4. Módulo de generación de URLs de WhatsApp contextuales y suite de pruebas.** RF-7, RF-10, RF-11
+- [x] **T4. Módulo de generación de URLs de WhatsApp contextuales y suite de pruebas.** RF-7, RF-10, RF-11
   - Hecho cuando: La función `buildWhatsAppUrl` en `src/lib/utils/whatsapp.js` genera los enlaces correctos con los textos predeterminados por perfil/sección y aprueba todos los casos con `node --test tests/whatsapp.test.js`.
 
 - [ ] **T5. Módulo de extracción de atribución y formateo de eventos Meta Pixel con pruebas.** RF-16, RF-17, RF-18, RF-19
