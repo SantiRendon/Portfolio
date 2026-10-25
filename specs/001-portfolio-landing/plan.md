@@ -3,6 +3,7 @@
 ## 1. Arquitectura y Stack Tecnológico
 - **Base Técnica y Repositorio**: SvelteKit con Tailwind CSS y estructura Bento Grid basada en `https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git`. El proyecto se inicializa clonando dicha base en el directorio de trabajo, reasignando el control de versiones remoto (`origin`) al repositorio personal `https://github.com/SantiRendon/Portfolio.git`, realizando el respaldo inicial (push) e instalando y verificando dependencias.
 - **Estrategia de Código**: Componentes visuales desacoplados en Svelte y módulos de lógica pura en JavaScript estándar para validación, URLs de WhatsApp y analítica publicitaria.
+- **Datos Estructurados**: Adopción estricta del esquema `cv_template.json` para modelar de forma homogénea los 3 perfiles profesionales reales (*Analista de Datos*, *Desarrollador BI y Sistemas*, e *Ingeniero de IA*).
 - **Pruebas Unitarias**: Suite automatizada con `node --test` y `node:assert/strict` sin librerías de testing externas.
 
 ---
@@ -11,73 +12,115 @@
 
 | Archivo | Responsabilidad | RF Cubiertos |
 | :--- | :--- | :--- |
-| `src/lib/data/profiles.json` | Esquema homogéneo con la información estructurada de los 3 perfiles técnicos (*Analista de Datos*, *Soporte y Sistemas*, *Data Entry y Operaciones*) y rutas a sus PDFs. | RF-2, RF-4, RF-5 |
+| `src/lib/data/profiles.json` | Esquema homogéneo basado en `cv_template.json` con la información de los 3 perfiles técnicos reales (*Analista de Datos*, *Desarrollador BI y Sistemas*, *Ingeniero de IA*), sus secciones (`personal`, `education`, `experience`, `skills`) y enlaces a sus PDFs. | RF-2, RF-4, RF-5 |
 | `src/lib/utils/validator.js` | Funciones puras para validación de datos del formulario (longitud de nombre, formato de email, teléfono numérico opcional y longitud de mensaje). | RF-12, RF-14 |
-| `src/lib/utils/whatsapp.js` | Generación pura de URLs de WhatsApp contextualizadas (`wa.me`) según la sección o perfil activo, con codificación segura de caracteres. | RF-7, RF-10, RF-11 |
+| `src/lib/utils/whatsapp.js` | Generación pura de URLs de WhatsApp contextualizadas (`wa.me`) con el número `573023233342` y mensajes para roles (`data`, `systems`, `ai`, `general`). | RF-7, RF-10, RF-11 |
 | `src/lib/utils/analytics.js` | Funciones puras para captura y parseo de parámetros UTM / fbclid y construcción de payloads de eventos Meta Pixel (`PageView`, `Contact`, `Lead`, `DownloadCV`). | RF-16, RF-17, RF-18, RF-19 |
-| `src/lib/components/ProfileSelector.svelte` | Selector interactivo de pestañas (Tabs) para alternar entre los roles técnicos con estado por defecto en *Analista de Datos*. | RF-2, RF-3, RF-4 |
-| `src/lib/components/BentoGrid.svelte` | Cuadrícula responsiva Bento que renderiza las tarjetas de perfil (resumen, experiencia, competencias, proyectos y botón de descarga directa de PDF con manejo de fallback). | RF-4, RF-5, RF-6 |
-| `src/lib/components/WhatsAppFloatingButton.svelte` | Botón flotante accesible fijado en pantalla con acceso rápido a WhatsApp y mensaje contextual predeterminado. | RF-10, RF-11 |
+| `src/lib/components/ProfileSelector.svelte` | Selector interactivo de pestañas (Tabs) para alternar entre los roles técnicos (*Analista de Datos*, *Desarrollador BI y Sistemas*, *Ingeniero de IA*) con estado por defecto en *Analista de Datos*. | RF-2, RF-3, RF-4 |
+| `src/lib/components/BentoGrid.svelte` | Cuadrícula responsiva Bento adaptada para renderizar las secciones de `cv_template.json` (`personal.summary`, `experience` con viñetas, `education`, `skills.technical`, certificaciones, idiomas y descarga de PDF con fallback). | RF-4, RF-5, RF-6 |
+| `src/lib/components/WhatsAppFloatingButton.svelte` | Botón flotante accesible fijado en pantalla con acceso rápido a WhatsApp (`573023233342`) y mensaje contextual predeterminado. | RF-10, RF-11 |
 | `src/lib/components/ContactForm.svelte` | Formulario de 4 campos independientes con validación reactiva en cliente, estado de envío (carga/deshabilitado) y confirmación en pantalla. | RF-12, RF-13, RF-14, RF-15 |
 | `src/lib/components/MetaPixel.svelte` | Componente de integración del script de Meta Pixel y despachador de eventos a `window.fbq`. | RF-16, RF-17, RF-18, RF-19 |
-| `src/routes/+page.svelte` | Página principal de Portafolio: Hero con propuesta de valor, ProfileSelector, BentoGrid multi-perfil, botón flotante de WhatsApp y pie de página. | RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-10 |
-| `src/routes/servicios/+page.svelte` | Landing comercial dedicada para Meta Ads: Titular y subtítulo cuantificable, catálogo de 3 servicios Bento, casos de uso, CTAs a WhatsApp, formulario de contacto y botón flotante. | RF-1, RF-7, RF-8, RF-9, RF-10, RF-11, RF-12, RF-13 |
+| `src/routes/+page.svelte` | Página principal de Portafolio: Hero profesional, ProfileSelector, BentoGrid multi-perfil, botón flotante de WhatsApp y pie de página. | RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-10 |
+| `src/routes/servicios/+page.svelte` | Landing comercial dedicada para Meta Ads: Titular y subtítulo cuantificable, catálogo de 3 servicios Bento (Datos & BI, Sistemas/Infraestructura, Soluciones con IA), CTAs a WhatsApp, formulario de contacto y botón flotante. | RF-1, RF-7, RF-8, RF-9, RF-10, RF-11, RF-12, RF-13 |
+| `tests/profiles.test.js` | Pruebas unitarias de conformidad de `profiles.json` contra el esquema estándar de `cv_template.json` con `node --test`. | RF-2 |
 | `tests/validator.test.js` | Pruebas unitarias automatizadas para la validación de formularios con `node --test`. | RF-12, RF-14 |
-| `tests/whatsapp.test.js` | Pruebas unitarias para la generación de URLs de WhatsApp con `node --test`. | RF-7, RF-11 |
+| `tests/whatsapp.test.js` | Pruebas unitarias para la generación de URLs de WhatsApp con el número real y contextos `data`, `systems`, `ai` y `general`. | RF-7, RF-11 |
 | `tests/analytics.test.js` | Pruebas unitarias para extracción de UTMs y construcción de eventos Pixel con `node --test`. | RF-16, RF-17, RF-18, RF-19 |
 
 ---
 
 ## 3. Esquema de Datos Homogéneo (`src/lib/data/profiles.json`)
-Estructura uniforme que alimenta a los 3 perfiles:
+La estructura de cada perfil se alinea estrictamente al esquema de `cv_template.json`:
 ```json
 {
   "profiles": [
     {
       "id": "data",
       "roleName": "Analista de Datos",
-      "title": "Data Analyst & Business Intelligence Specialist",
-      "summary": "Especialista en extracción, modelado y visualización de datos...",
-      "skills": ["SQL", "Power BI", "Python", "ETL", "Excel Avanzado"],
+      "pdfUrl": "/cv/cv-analista-datos.pdf",
+      "whatsappContext": "data",
+      "personal": {
+        "name": "Santiago Rendón",
+        "title": "Analista de Datos y Automatización (Power BI, SQL & IA)",
+        "email": "santirendon32@gmail.com",
+        "phone": "+57 302 323 334 2",
+        "location": "Armenia, Quindío, Colombia",
+        "website": "https://santirendon.github.io/Portfolio",
+        "github": "https://github.com/SantiRendon",
+        "gitlab": "https://gitlab.com/SantiRendon",
+        "summary": "Analista de datos enfocado en transformar requerimientos de negocio en soluciones analíticas..."
+      },
+      "education": [
+        {
+          "institution": "Universidad / Instituto",
+          "degree": "Ingeniería / Especialización",
+          "location": "Colombia",
+          "startDate": "2018",
+          "endDate": "2023",
+          "description": "Formación integral en ciencias de la computación..."
+        }
+      ],
       "experience": [
         {
-          "company": "Empresa / Proyecto",
-          "role": "Analista de Datos Senior",
-          "period": "2022 - Presente",
-          "achievements": ["Implementación de dashboards en Power BI...", "Automatización de reportes..."]
+          "company": "Empresa / Cliente",
+          "position": "Analista de Datos & BI",
+          "location": "Remoto",
+          "startDate": "2022",
+          "endDate": "Presente",
+          "description": "Diseño y despliegue de modelos de datos y dashboards ejecutivos en Power BI..."
         }
       ],
-      "projects": [
-        {
-          "name": "Dashboard Ejecutivo de Ventas",
-          "description": "Visualización de KPIs comerciales y forecasting.",
-          "technologies": ["Power BI", "SQL Server"]
-        }
-      ],
-      "pdfUrl": "/cv/cv-analista-datos.pdf",
-      "whatsappContext": "data"
+      "skills": {
+        "technical": ["Power BI", "SQL (PostgreSQL, SQL Server)", "Python", "DAX", "ETL", "Excel Avanzado"],
+        "languages": ["Español (Nativo)", "Inglés (Técnico / B2)"],
+        "certifications": ["Certificaciones Microsoft / BI"],
+        "additional": ["Automatización de procesos", "Metodologías Ágiles"]
+      }
     },
     {
       "id": "systems",
-      "roleName": "Soporte y Sistemas",
-      "title": "Especialista en Soporte TI e Infraestructura",
-      "summary": "Gestión, diagnóstico y resolución de incidencias en redes...",
-      "skills": ["Linux / Windows Server", "Redes TCP/IP", "Active Directory", "Mantenimiento Preventivo"],
+      "roleName": "Desarrollador BI y Sistemas",
+      "pdfUrl": "/cv/cv-sistemas.pdf",
+      "whatsappContext": "systems",
+      "personal": {
+        "name": "Santiago Rendón",
+        "title": "Business Intelligence Developer & Power BI Specialist (Sistemas / BI)",
+        "email": "santirendon32@gmail.com",
+        "phone": "+57 302 323 334 2",
+        "location": "Armenia, Quindío, Colombia",
+        "summary": "Especialista en desarrollo de soluciones de Inteligencia de Negocios, modelado relacional y administración de sistemas..."
+      },
+      "education": [...],
       "experience": [...],
-      "projects": [...],
-      "pdfUrl": "/cv/cv-soporte-sistemas.pdf",
-      "whatsappContext": "systems"
+      "skills": {
+        "technical": ["Power BI", "SQL Server", "ETL Pipelines", "Data Warehousing", "Linux / Windows Server", "Redes"],
+        "languages": ["Español (Nativo)", "Inglés"],
+        "certifications": [...],
+        "additional": [...]
+      }
     },
     {
-      "id": "data-entry",
-      "roleName": "Data Entry y Operaciones",
-      "title": "Especialista en Carga Masiva y Automatización de Datos",
-      "summary": "Procesamiento, limpieza y validación exhaustiva de datos...",
-      "skills": ["Excel Macros / VBA", "Google Sheets", "Validación de Datos", "OCR y OCR Scripts"],
+      "id": "ai",
+      "roleName": "Ingeniero de IA",
+      "pdfUrl": "/cv/cv-ingeniero-ia.pdf",
+      "whatsappContext": "ai",
+      "personal": {
+        "name": "Santiago Rendón",
+        "title": "Ingeniero de IA y Analista de Datos (Python, IA Generativa & Cloud)",
+        "email": "santirendon32@gmail.com",
+        "phone": "+57 302 323 334 2",
+        "location": "Armenia, Quindío, Colombia",
+        "summary": "Ingeniero enfocado en el desarrollo de agentes inteligentes, integración de LLMs, automatización avanzada y analítica con Python..."
+      },
+      "education": [...],
       "experience": [...],
-      "projects": [...],
-      "pdfUrl": "/cv/cv-data-entry.pdf",
-      "whatsappContext": "data-entry"
+      "skills": {
+        "technical": ["Python", "OpenAI / Claude APIs", "LangChain / LLMs", "FastAPI", "Prompt Engineering", "SQL", "Cloud Computing"],
+        "languages": ["Español (Nativo)", "Inglés"],
+        "certifications": [...],
+        "additional": ["Automatización de flujos con IA", "Agentes autónomos"]
+      }
     }
   ]
 }
@@ -124,18 +167,20 @@ Estructura uniforme que alimenta a los 3 perfiles:
 
 ### 4.2. Generación de Enlaces de WhatsApp (`src/lib/utils/whatsapp.js`)
 **Firma:** `buildWhatsAppUrl(phone, contextType)`
-- **Entrada:** `phone` (string), `contextType` (string: `'general' | 'data' | 'systems' | 'data-entry'`)
+- **Entrada:** `phone` (string, por defecto `'573023233342'`), `contextType` (string: `'general' | 'data' | 'systems' | 'ai'`)
 - **Pseudocódigo:**
   ```text
+  CONSTANT DEFAULT_PHONE = "573023233342"
+
   CONSTANT MESSAGES = {
     "general": "Hola, vi tu portafolio y me gustaría consultar sobre tus servicios.",
     "data": "Hola, me interesa una cotización para análisis de datos y dashboards.",
-    "systems": "Hola, necesito soporte y asesoría en sistemas e infraestructura.",
-    "data-entry": "Hola, requiero apoyo en digitación y automatización de datos."
+    "systems": "Hola, necesito soporte y asesoría en BI y sistemas.",
+    "ai": "Hola, me interesa una asesoría/cotización en soluciones con IA y automatizaciones."
   }
 
-  FUNCTION buildWhatsAppUrl(phone, contextType):
-    cleanPhone = phone.replace(/[^0-9]/g, "")
+  FUNCTION buildWhatsAppUrl(phone = DEFAULT_PHONE, contextType = "general"):
+    cleanPhone = (phone || DEFAULT_PHONE).replace(/[^0-9]/g, "")
     messageText = MESSAGES[contextType] OR MESSAGES["general"]
     encodedMessage = encodeURIComponent(messageText)
     RETURN "https://wa.me/" + cleanPhone + "?text=" + encodedMessage
@@ -180,74 +225,71 @@ Estructura uniforme que alimenta a los 3 perfiles:
 ## 5. Diseño de Interfaz y Navegación
 
 ### 5.1. Ruta Principal (`/`) — Portafolio Profesional
-- **Hero Section**: Introducción profesional, foto/avatar, propuesta de valor general y enlaces de salto a perfiles y contacto.
-- **Selector de Perfiles (`ProfileSelector`)**: Tabs estilizados con estado activo en *Analista de Datos* al cargar.
-- **Cuadrícula Bento (`BentoGrid`)**:
-  - Tarjeta 1: Perfil y resumen profesional dinámico.
-  - Tarjeta 2: Competencias y herramientas técnicas dominadas.
-  - Tarjeta 3: Trayectoria laboral y logros cuantificados.
-  - Tarjeta 4: Proyectos demostrativos con enlaces.
-  - Tarjeta 5: Botón de descarga directa de PDF (`download`) con comprobación de error (`onerror`) para disparar alerta de fallback con enlace a WhatsApp (CL-5).
-- **Botón Flotante (`WhatsAppFloatingButton`)**: Posición `fixed bottom-6 right-6 z-50` con icono accesible y tooltip.
+- **Hero Section**: Introducción profesional de Santiago Rendón, foto/avatar, propuesta de valor multirrol y enlaces rápidos a contacto y servicios.
+- **Selector de Perfiles (`ProfileSelector`)**: Tabs estilizados (*Analista de Datos*, *Desarrollador BI y Sistemas*, *Ingeniero de IA*) con estado activo en *Analista de Datos* al cargar.
+- **Cuadrícula Bento (`BentoGrid`)**: Adaptada a los bloques de `cv_template.json`:
+  - Tarjeta 1 (Perfil): `personal.name`, `personal.title` y `personal.summary`.
+  - Tarjeta 2 (Skills): `skills.technical` (tags visuales interactivos), `skills.certifications` y `skills.languages`.
+  - Tarjeta 3 (Experiencia): Lista cronológica de `experience` (empresa, cargo, periodo y viñetas descriptivas).
+  - Tarjeta 4 (Educación): Formación de `education` y enlaces profesionales (`github`, `gitlab`, `linkedin`).
+  - Tarjeta 5 (Descarga CV): Botón de descarga directa del archivo PDF correspondiente con disparador de fallback a WhatsApp en caso de error (CL-5).
+- **Botón Flotante (`WhatsAppFloatingButton`)**: Posición fija inferior derecha enlazando a `https://wa.me/573023233342` con texto contextual general.
 
 ### 5.2. Ruta de Servicios (`/servicios`) — Landing Comercial Meta Ads
-- **Diseño sin Fugas**: Sin barra de navegación con enlaces a páginas externas o redes que desvíen la atención.
+- **Diseño sin Fugas**: Sin barra de navegación dispersa ni enlaces salientes.
 - **Hero Comercial**:
-  - *Titular*: "Soluciones en Datos, Infraestructura TI y Automatización Operativa para tu Negocio".
-  - *Subtítulo*: "Optimiza hasta un 70% del tiempo operativo con reportes automatizados, soporte continuo y digitalización sin errores."
-  - *Llamada a la Acción (CTA)*: Botón destacado de WhatsApp "Cotizar Solución por WhatsApp".
+  - *Titular*: "Soluciones en Datos, Business Intelligence e Inteligencia Artificial para tu Negocio".
+  - *Subtítulo*: "Optimiza la toma de decisiones y automatiza procesos operativos con dashboards ejecutivos, analítica avanzada y agentes con IA."
+  - *Llamada a la Acción (CTA)*: Botón destacado "Cotizar Solución por WhatsApp".
 - **Catálogo Bento de Servicios**:
-  1. *Análisis de Datos y Dashboards*: Indicadores clave, visualizaciones interactivas y modelos en Power BI / SQL. CTA contextual WhatsApp.
-  2. *Soporte y Sistemas TI*: Mantenimiento preventivo, soporte a usuarios y configuración de redes seguras. CTA contextual WhatsApp.
-  3. *Automatización y Data Entry*: Migración, limpieza masiva de datos y automatización de planillas. CTA contextual WhatsApp.
-- **Prueba Social y Credibilidad**: Tarjetas de casos de uso reales con métricas de impacto.
-- **Formulario de Contacto (`ContactForm`)**: 4 campos independientes, validaciones en línea, botón de envío con animación de carga (`disabled` mientras envía) y notificación visual de éxito.
+  1. *Análisis de Datos y Dashboards*: Indicadores clave, visualizaciones interactivas y modelos en Power BI / SQL. CTA contextual WhatsApp (`data`).
+  2. *Desarrollo de BI y Sistemas*: Data warehousing, pipelines ETL, modelado relacional y arquitectura de información. CTA contextual WhatsApp (`systems`).
+  3. *Soluciones con IA Generativa y Automatización*: Implementación de agentes con LLMs, automatizaciones con Python e integración de APIs cognitivas. CTA contextual WhatsApp (`ai`).
+- **Prueba Social y Casos de Éxito**: Métricas cuantificadas de impacto y reducción de costos operativos.
+- **Formulario de Contacto (`ContactForm`)**: 4 campos independientes, validación en tiempo real, prevención de envíos duplicados y confirmación en pantalla.
 
 ---
 
 ## 6. Decisiones Justificadas
 
-1. **Diseño Bento Grid modular**:
-   - *Decisión*: Reutilizar el patrón Bento de `prabhukirankonda-portfolio` adaptándolo con Tailwind CSS.
-   - *Alternativa descartada*: Maquetación tradicional lineal o listas genéricas.
-   - *Motivo*: Mayor densidad de información visual, estética moderna de alto impacto para reclutadores y clientes, y adaptabilidad fluida a resoluciones móviles.
-2. **Estructura homogénea en `profiles.json`**:
-   - *Decisión*: Alimentar los 3 roles desde un único archivo estructurado estándar.
-   - *Alternativa descartada*: Crear componentes o plantillas separadas para cada rol.
-   - *Motivo*: Mantenimiento centralizado, facilidad para incorporar nuevos roles futuros y garantía de consistencia visual.
+1. **Adopción estricta de `cv_template.json`**:
+   - *Decisión*: Reutilizar exactamente la plantilla modular provista por el usuario (`personal`, `education`, `experience`, `skills`).
+   - *Alternativa descartada*: Mantener un formato ad-hoc simplificado o mezclar esquemas heterogéneos.
+   - *Motivo*: Compatibilidad con los 3 CVs reales del usuario, estandarización de datos e interoperabilidad para futuras expansiones.
+2. **Centralización del número de WhatsApp (`573023233342`)**:
+   - *Decisión*: Definir el número real como constante por defecto en `whatsapp.js` y configurable mediante variable de entorno opcional.
+   - *Alternativa descartada*: Hardcodear diferentes números en distintos componentes.
+   - *Motivo*: Consistencia en todas las llamadas a la acción y facilidad de mantenimiento.
 3. **Tests unitarios con `node --test` nativo**:
-   - *Decisión*: Usar el ejecutor de pruebas de Node.js (`node --test`) y aserciones estrictas (`node:assert/strict`).
-   - *Alternativa descartada*: Instalar Jest, Mocha o Vitest.
-   - *Motivo*: Cumplimiento estricto de la Constitución (cero dependencias de testing), ejecución ultra rápida y portabilidad total.
-4. **Almacenamiento de atribución en `sessionStorage`**:
-   - *Decisión*: Capturar UTMs en la primera carga y persistirlas en la sesión del navegador para vincularlas a conversiones posteriores.
-   - *Alternativa descartada*: Enviar UTMs solo en la página inicial o usar cookies invasivas.
-   - *Motivo*: Respeto a la privacidad del usuario, funcionamiento sin fricción en Single Page Applications y trazabilidad íntegra del lead publicitario.
+   - *Decisión*: Usar el ejecutor nativo de Node.js y aserciones estrictas (`node:assert/strict`).
+   - *Alternativa descartada*: Instalar librerías de testing de terceros.
+   - *Motivo*: Cumplimiento estricto de la Constitución del proyecto (cero dependencias de testing).
 
 ---
 
 ## 7. Estrategia de Pruebas Unitarias (`node --test`)
 
-La suite de pruebas automatizadas no requiere dependencias externas y se ejecuta con `node --test tests/*.test.js`:
+La suite de pruebas automatizadas se ejecuta con `node --test tests/*.test.js`:
 
-1. **`tests/validator.test.js`**:
+1. **`tests/profiles.test.js`**:
+   - Validación de que `profiles.json` contiene los 3 perfiles con IDs `data`, `systems` y `ai`.
+   - Verificación de presencia de los bloques requeridos por `cv_template.json`: `personal`, `education`, `experience` y `skills`.
+   - Comprobación de que `personal.summary` es una cadena no vacía y `skills.technical` es un arreglo con elementos.
+   - Verificación de enlaces válidos en `pdfUrl`.
+2. **`tests/validator.test.js`**:
    - Validación exitosa con todos los campos válidos (nombre >= 2, email válido, teléfono válido, mensaje >= 10).
    - Rechazo de nombre vacío o menor a 2 caracteres.
    - Rechazo de formato de correo inválido (sin @ o sin dominio).
    - Aceptación de teléfono omitido (campo opcional).
-   - Rechazo de teléfono con caracteres alfabéticos no permitidos.
+   - Rechazo de teléfono con caracteres no numéricos.
    - Rechazo de mensaje menor a 10 caracteres.
-2. **`tests/whatsapp.test.js`**:
-   - Construcción de URL con prefijo `https://wa.me/` y número limpio sin guiones ni espacios.
-   - Verificación del mensaje predeterminado para rol `'data'`.
-   - Verificación del mensaje predeterminado para rol `'systems'`.
-   - Verificación del mensaje predeterminado para rol `'data-entry'`.
-   - Verificación del mensaje general de fallback ante contexto desconocido.
-   - Codificación correcta de espacios, acentos y signos de puntuación con `encodeURIComponent`.
-3. **`tests/analytics.test.js`**:
-   - Extracción correcta de parámetros `utm_source`, `utm_medium`, `utm_campaign` y `fbclid`.
-   - Descarte de parámetros vacíos o no relacionados.
-   - Generación del evento estándar `'PageView'`.
-   - Generación del evento estándar `'Contact'` con canal y contexto.
-   - Generación del evento estándar `'Lead'` adjuntando los parámetros de atribución.
-   - Generación del evento personalizado `'DownloadCV'` con el objeto `{ role: 'data' }`.
+3. **`tests/whatsapp.test.js`**:
+   - Verificación de prefijo `https://wa.me/573023233342`.
+   - Validación del mensaje predeterminado para rol `'data'`.
+   - Validación del mensaje predeterminado para rol `'systems'`.
+   - Validación del mensaje predeterminado para rol `'ai'`.
+   - Validación del mensaje general de fallback ante contexto desconocido.
+   - Codificación correcta de caracteres especiales con `encodeURIComponent`.
+4. **`tests/analytics.test.js`**:
+   - Extracción de parámetros `utm_source`, `utm_medium`, `utm_campaign` y `fbclid`.
+   - Generación de eventos `PageView`, `Contact`, `Lead` (con atribución) y `DownloadCV` (con `{ role }`).

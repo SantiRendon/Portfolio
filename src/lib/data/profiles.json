@@ -3,152 +3,344 @@
     {
       "id": "data",
       "roleName": "Analista de Datos",
-      "title": "Data Analyst & Business Intelligence Specialist",
-      "summary": "Especialista en extracción, modelado, análisis y visualización de datos de negocio. Amplia trayectoria transformando datos complejos y dispersos en tableros interactivos de Power BI y modelos analíticos que impulsan la toma de decisiones estratégicas, optimizan inventarios y reducen costos operativos.",
-      "skills": [
-        "SQL (PostgreSQL, MySQL, SQL Server)",
-        "Power BI & DAX Avanzado",
-        "Python (Pandas, NumPy, Matplotlib)",
-        "Modelado de Datos & ETL",
-        "Excel Avanzado & Power Query",
-        "Definición y Seguimiento de KPIs",
-        "Storytelling con Datos"
+      "title": "Analista de Datos y Automatización | Power BI, SQL & IA",
+      "summary": "Analista de Datos y Tecnólogo en Desarrollo de Sistemas con sólida experiencia en la creación de dashboards estratégicos en Power BI (DAX, modelado de datos) y análisis descriptivo y diagnóstico para la toma de decisiones. Experto en levantamiento de requerimientos, diseño de KPIs y ejecución de procesos de limpieza y transformación de datos (ETL). Cuento con conocimientos avanzados en programación (Python, SQL), integración de APIs y automatización de flujos de datos. Además, integro activamente herramientas de IA Generativa y Agentes de IA para optimizar procesos analíticos. Destaco por mi pensamiento crítico, atención al detalle y capacidad para comunicar hallazgos complejos a líderes y directores.",
+      "pdfUrl": "/cv/cv-analista-datos.pdf",
+      "whatsappContext": "data",
+      "personal": {
+        "name": "Santiago Rendon Castrillon",
+        "title": "Analista de Datos y Automatización | Power BI, SQL & IA",
+        "email": "santirendon.castrillon@gmail.com",
+        "phone": "+57 302 323 334 2",
+        "location": "Medellín, Colombia",
+        "website": "https://www.linkedin.com/in/santiago-rendon-castrillon-06056a230/",
+        "github": "",
+        "gitlab": "",
+        "summary": "Analista de Datos y Tecnólogo en Desarrollo de Sistemas con sólida experiencia en la creación de dashboards estratégicos en Power BI (DAX, modelado de datos) y análisis descriptivo y diagnóstico para la toma de decisiones. Experto en levantamiento de requerimientos, diseño de KPIs y ejecución de procesos de limpieza y transformación de datos (ETL). Cuento con conocimientos avanzados en programación (Python, SQL), integración de APIs y automatización de flujos de datos. Además, integro activamente herramientas de IA Generativa y Agentes de IA para optimizar procesos analíticos. Destaco por mi pensamiento crítico, atención al detalle y capacidad para comunicar hallazgos complejos a líderes y directores."
+      },
+      "education": [
+        {
+          "institution": "Bootcamp de Análisis de Datos",
+          "degree": "Formación Profesional como Analista de Datos (Python, SQL, Power BI, Excel)",
+          "location": "Remoto / Medellín",
+          "startDate": "Ene 2025",
+          "endDate": "Jun 2025",
+          "description": "Especialización en análisis exploratorio de datos, pipelines ETL, consultas relacionales avanzadas en SQL, modelado dimensional y desarrollo de dashboards ejecutivos en Power BI."
+        },
+        {
+          "institution": "Servicio Nacional de Aprendizaje (SENA)",
+          "degree": "Tecnólogo en Análisis y Desarrollo de Sistemas de Información",
+          "location": "Medellín, Colombia",
+          "startDate": "Ene 2022",
+          "endDate": "Nov 2024",
+          "description": "Formación integral en diseño de bases de datos relacionales, ingeniería de requerimientos, lógica de programación y metodologías ágiles."
+        },
+        {
+          "institution": "I.E. Comercial Antonio Roldán Betancur",
+          "degree": "Bachiller Técnico en Desarrollo de Software",
+          "location": "Medellín, Colombia",
+          "startDate": "Ene 2020",
+          "endDate": "Nov 2021",
+          "description": "Fundamentos en algoritmos, bases de datos y soporte técnico operativo."
+        }
       ],
       "experience": [
         {
-          "company": "Soluciones Analíticas Globales",
-          "role": "Analista de Inteligencia de Negocios Senior",
-          "period": "2022 - Presente",
-          "achievements": [
-            "Diseño e implementación de más de 20 dashboards interactivos en Power BI reduciendo el tiempo de generación de reportes gerenciales en un 65%.",
-            "Automatización de procesos ETL en SQL Server y Python para integrar ventas, compras y logística de 4 fuentes heterogéneas.",
-            "Optimización de modelos relacionales estrella/copo de nieve reduciendo tiempos de refresco de consultas en un 40%."
-          ]
+          "company": "ePayco by Davivienda",
+          "position": "Analista de Datos y BI",
+          "location": "Medellín (Híbrido)",
+          "startDate": "Marzo 2026",
+          "endDate": "Agosto 2026",
+          "description": "• Diseñé, desarrollé y analicé dashboards interactivos en Power BI (DAX, modelado) para el seguimiento de KPIs estratégicos del negocio.\n• Levanté requerimientos con áreas clave y ejecuté procesos ETL (limpieza y transformación) utilizando Python y MySQL para garantizar información confiable y oportuna.\n• Acompañé a usuarios del negocio en la interpretación de la información para facilitar la toma de decisiones basada en datos.\n• Implementé Agentes de IA y soluciones de IA Generativa para la creación de modelos, KPIs y automatización de código DAX, reduciendo tiempos operativos."
         },
         {
-          "company": "Consultoría Empresarial y Datos",
-          "role": "Analista de Datos y Reportería",
-          "period": "2020 - 2022",
-          "achievements": [
-            "Construcción de tableros de control financiero con fórmulas DAX complejas para control presupuestario mensual.",
-            "Detección de patrones de fuga de clientes mediante análisis exploratorio en Python con una precisión predictiva del 82%."
-          ]
-        }
-      ],
-      "projects": [
-        {
-          "name": "Dashboard Ejecutivo de Ventas & Forecasting Comercial",
-          "description": "Visualización integral de KPIs comerciales en tiempo real con proyección de demanda, análisis de margen bruto por línea de producto y alertas automatizadas.",
-          "technologies": ["Power BI", "DAX", "SQL Server", "Power Query"]
+          "company": "Superprof",
+          "position": "Consultor de Análisis de Datos y Automatizaciones",
+          "location": "Remoto",
+          "startDate": "Junio 2025",
+          "endDate": "Diciembre 2025",
+          "description": "• Desarrollé dashboards en Power BI y diseñé flujos de datos automatizados (RPA, Power Automate/Excel) alineados a los procesos internos de los clientes.\n• Implementé flujos ETL en Python y analicé información para apoyar el seguimiento de métricas clave.\n• Capacité a profesionales en modelado de datos, DAX y automatización de reportes, comunicando conceptos técnicos de manera efectiva."
         },
         {
-          "name": "Pipeline Automatizado de Conciliación de Pagos",
-          "description": "Script en Python y PostgreSQL para conciliar diariamente miles de transacciones bancarias contra pasarelas de pago digitales, reduciendo discrepancias a menos del 0.05%.",
-          "technologies": ["Python", "Pandas", "PostgreSQL", "Cron"]
+          "company": "Memoria Abierta – Proyecto Análisis del Conflicto Armado",
+          "position": "Analista de Datos y Transformación Digital",
+          "location": "Remoto",
+          "startDate": "Febrero 2025",
+          "endDate": "Junio 2025",
+          "description": "• Ejecuté procesos de minería de datos, limpieza y tratamiento de valores atípicos mediante Python y técnicas estadísticas.\n• Modelé la información en MySQL mediante consultas complejas y construí tableros en Power BI para comunicar hallazgos de forma clara y visual."
+        },
+        {
+          "company": "Startup Innovation Lab",
+          "position": "Analista de Automatizaciones & Administrador Web",
+          "location": "Remoto",
+          "startDate": "Diciembre 2024",
+          "endDate": "Junio 2025",
+          "description": "• Diseñé y gestioné automatizaciones de procesos operativos, garantizando el flujo constante de información entre diferentes plataformas.\n• Implementé monitoreo de KPIs operativos y flujos automáticos de soporte, mejorando la eficiencia interna."
+        },
+        {
+          "company": "Giga Chad LLC",
+          "position": "Analista de Automatización de Procesos con IA",
+          "location": "Remoto",
+          "startDate": "Mayo 2024",
+          "endDate": "Septiembre 2024",
+          "description": "• Desarrollé integraciones mediante APIs y scripts en Python (web scraping) para la extracción y estructuración eficiente de datos.\n• Automaticé tareas mediante el uso de IA Generativa y APIs de modelos de lenguaje (OpenAI, Anthropic), optimizando flujos de trabajo en más del 50%."
+        },
+        {
+          "company": "Dataknow (Daki)",
+          "position": "Practicante en Desarrollo Web Fullstack",
+          "location": "Remoto",
+          "startDate": "Agosto 2023",
+          "endDate": "Marzo 2024",
+          "description": "• Construí servicios e integraciones en la nube AWS con Python (Boto3) para el procesamiento de datos.\n• Integré herramientas analíticas como Cube.js para reportes y visualización eficiente de métricas clave."
+        },
+        {
+          "company": "Freelance",
+          "position": "Consultor en Bases de Datos & APIs",
+          "location": "Remoto",
+          "startDate": "Octubre 2022",
+          "endDate": "Agosto 2023",
+          "description": "• Diseñé y optimicé esquemas relacionales en MySQL asegurando la calidad de los datos para la extracción de reportes.\n• Desarrollé integraciones con APIs REST para el consumo y manipulación segura de información estructurada."
         }
       ],
-      "pdfUrl": "/cv/cv-analista-datos.pdf",
-      "whatsappContext": "data"
+      "skills": {
+        "technical": "Visualización y BI: Power BI Avanzado (Modelado de datos, DAX), Diseño de Dashboards y KPIs. Análisis y Datos: Minería de datos, SQL (MySQL), Python (Pandas), Procesos ETL (Limpieza y transformación), Análisis descriptivo y diagnóstico. Automatización e Innovación: IA Generativa, Agentes de IA, Power Apps, Power Automate, Integración de APIs, RPA.",
+        "languages": "Español (Nativo), Inglés (A1 - Básico)",
+        "certifications": [
+          {
+            "name": "PL-300T00-A: Microsoft Power BI Data Analyst – Microsoft",
+            "date": "Mayo 2025"
+          },
+          {
+            "name": "Python Project For AI and Application Development – IBM",
+            "date": "Mayo 2025"
+          },
+          {
+            "name": "Certificación Bootcamp ICP Developer en Motoko – DFINITY Foundation",
+            "date": "Junio 2024"
+          },
+          {
+            "name": "Programa de Incubación Zona Tres – Proyecto Ecofund",
+            "date": "Octubre 2024"
+          }
+        ],
+        "additional": "Pensamiento analítico y crítico, Orientación a resultados, Atención al detalle, Capacidad de síntesis, Comunicación efectiva de resultados a líderes y directores, Trabajo colaborativo."
+      }
     },
     {
       "id": "systems",
-      "roleName": "Soporte y Sistemas",
-      "title": "Especialista en Soporte TI, Redes e Infraestructura",
-      "summary": "Profesional con sólida experiencia en administración de infraestructura tecnológica, diagnóstico y resolución proactiva de incidencias hardware/software, configuración de redes TCP/IP, servidores Linux/Windows y aseguramiento de continuidad operativa en entornos corporativos de alta demanda.",
-      "skills": [
-        "Soporte Helpdesk L1/L2/L3",
-        "Linux Server (Debian/Ubuntu, RHEL)",
-        "Windows Server & Active Directory",
-        "Redes TCP/IP, VLANs, VPN & Firewall",
-        "Mantenimiento Preventivo y Correctivo",
-        "Gestión de Backups y Recuperación ante Desastres",
-        "Virtualización (Proxmox, VMware, VirtualBox)"
+      "roleName": "Desarrollador BI y Sistemas",
+      "title": "Business Intelligence Developer & Power BI Specialist",
+      "summary": "Desarrollador de Business Intelligence (BI) y Tecnólogo en Desarrollo de Sistemas, especializado en el ciclo de vida completo de análisis de datos: modelado dimensional tipo estrella, desarrollo de métricas avanzadas en DAX y diseño de tableros ejecutivos en Power BI. Experiencia en extracción, transformación y carga (ETL) con Python y SQL (MySQL, PostgreSQL), estructuración de almacenes de datos y automatización de reportes. Destaco por aplicar storytelling con datos para transformar requerimientos de negocio en indicadores accionables que optimizan la toma de decisiones.",
+      "pdfUrl": "/cv/cv-sistemas.pdf",
+      "whatsappContext": "systems",
+      "personal": {
+        "name": "Santiago Rendon Castrillon",
+        "title": "Business Intelligence Developer & Power BI Specialist",
+        "email": "santirendon.castrillon@gmail.com",
+        "phone": "+57 302 323 334 2",
+        "location": "Medellín, Colombia",
+        "website": "https://www.linkedin.com/in/santiago-rendon-castrillon-06056a230/",
+        "github": "",
+        "gitlab": "",
+        "summary": "Desarrollador de Business Intelligence (BI) y Tecnólogo en Desarrollo de Sistemas, especializado en el ciclo de vida completo de análisis de datos: modelado dimensional tipo estrella, desarrollo de métricas avanzadas en DAX y diseño de tableros ejecutivos en Power BI. Experiencia en extracción, transformación y carga (ETL) con Python y SQL (MySQL, PostgreSQL), estructuración de almacenes de datos y automatización de reportes. Destaco por aplicar storytelling con datos para transformar requerimientos de negocio en indicadores accionables que optimizan la toma de decisiones."
+      },
+      "education": [
+        {
+          "institution": "Bootcamp de Análisis de Datos",
+          "degree": "Especialización en Business Intelligence y Análisis de Datos (Power BI, SQL, Python)",
+          "location": "Remoto / Medellín",
+          "startDate": "Ene 2025",
+          "endDate": "Jun 2025",
+          "description": "Formación avanzada en modelado dimensional, cálculo de KPIs en DAX, administración de áreas de trabajo en Power BI Service y consultas complejas en SQL."
+        },
+        {
+          "institution": "Servicio Nacional de Aprendizaje (SENA)",
+          "degree": "Tecnólogo en Análisis y Desarrollo de Sistemas de Información",
+          "location": "Medellín, Colombia",
+          "startDate": "Ene 2022",
+          "endDate": "Nov 2024",
+          "description": "Formación en normalización de bases de datos relacionales, arquitectura de software, modelado relacional e ingeniería de requerimientos."
+        },
+        {
+          "institution": "I.E. Comercial Antonio Roldán Betancur",
+          "degree": "Bachiller Técnico en Desarrollo de Software",
+          "location": "Medellín, Colombia",
+          "startDate": "Ene 2020",
+          "endDate": "Nov 2021",
+          "description": "Lógica algorítmica, fundamentos de programación, gestión de bases de datos y soporte operativo."
+        }
       ],
       "experience": [
         {
-          "company": "Infraestructura & Servicios TI",
-          "role": "Especialista de Soporte TI e Infraestructura",
-          "period": "2021 - Presente",
-          "achievements": [
-            "Mantenimiento de disponibilidad del 99.8% en infraestructura de servidores y estaciones de trabajo para más de 120 usuarios.",
-            "Implementación de políticas de grupo (GPO) en Active Directory y segmentación de red VLAN mitigando incidentes de seguridad en un 50%.",
-            "Resolución de más de 1,500 tickets de soporte técnico cumpliendo SLA promedio inferior a 45 minutos."
-          ]
+          "company": "ePayco by Davivienda",
+          "position": "Desarrollador de Business Intelligence (BI)",
+          "location": "Medellín (Híbrido)",
+          "startDate": "Marzo 2026",
+          "endDate": "Agosto 2026",
+          "description": "• Diseñé e implementé la arquitectura de modelos dimensionales tipo estrella en Power BI, optimizando el rendimiento de consultas DAX complejas.\n• Construí dashboards ejecutivos para el seguimiento en tiempo real de transaccionalidad, ingresos y retención de comercios aliados.\n• Desarrollé pipelines de extracción y limpieza de datos conectando MySQL, Elasticsearch y APIs REST mediante scripts en Python.\n• Implementé un agente de IA generativa para la generación y validación de expresiones DAX y documentación automática de modelos de datos."
         },
         {
-          "company": "Soporte Corporativo & Redes",
-          "role": "Técnico de Soporte de Sistemas",
-          "period": "2019 - 2021",
-          "achievements": [
-            "Despliegue y mantenimiento preventivo periódico de parque informático de más de 80 equipos de cómputo e impresoras de red.",
-            "Configuración de copias de seguridad automatizadas en NAS y almacenamiento en la nube para resguardo de información crítica."
-          ]
-        }
-      ],
-      "projects": [
-        {
-          "name": "Migración y Modernización de Red Corporativa",
-          "description": "Diseño y despliegue de cableado estructurado, switches gestionables con VLANs dedicadas, enlaces VPN seguros y Wi-Fi corporativo con autenticación centralizada.",
-          "technologies": ["Cisco / MikroTik", "VLANs", "OpenVPN", "Active Directory"]
+          "company": "Superprof",
+          "position": "Consultor e Instructor de Power BI y Modelado de Datos",
+          "location": "Remoto",
+          "startDate": "Junio 2025",
+          "endDate": "Diciembre 2025",
+          "description": "• Asesoré a clientes empresariales en la adopción de Power BI, diseñando soluciones analíticas desde la ingesta hasta la capa de visualización.\n• Impartí capacitación técnica en DAX avanzado, inteligencia de tiempo y modelado estrella a más de 15 profesionales de áreas financieras y comerciales.\n• Diseñé plantillas de reportes corporativos y flujos de actualización automática de datos reduciendo reprocesos manuales."
         },
         {
-          "name": "Servidor de Monitorización de Servicios TI en Tiempo Real",
-          "description": "Implementación de servidor de monitoreo basado en Zabbix para supervisar switches, enlaces de internet, uso de disco y memoria de servidores con alertas vía Telegram.",
-          "technologies": ["Linux Ubuntu Server", "Zabbix", "SNMP", "Bash Scripting"]
+          "company": "Memoria Abierta – Proyecto Análisis del Conflicto Armado",
+          "position": "Analista de Inteligencia de Datos",
+          "location": "Remoto",
+          "startDate": "Febrero 2025",
+          "endDate": "Junio 2025",
+          "description": "• Estructuré bases de datos relacionales en MySQL con millones de registros de fuentes abiertas sobre el conflicto armado en Colombia.\n• Desarrollé tableros analíticos en Power BI con mapas interactivos y filtros dinámicos para la divulgación de hallazgos estadísticos clave.\n• Estandarizó protocolos de calidad y consistencia de datos para asegurar la confiabilidad de los reportes generados."
+        },
+        {
+          "company": "Dataknow (Daki)",
+          "position": "Desarrollador Web y Soporte de Datos",
+          "location": "Remoto",
+          "startDate": "Agosto 2023",
+          "endDate": "Marzo 2024",
+          "description": "• Integré capas analíticas con Cube.js para habilitar métricas en tiempo real en aplicaciones Next.js y React.\n• Gestioné servicios en la nube de AWS (Lambda, API Gateway, S3) para la ingesta y consulta de eventos analíticos.\n• Colaboró con el equipo de producto en el refinamiento de interfaces y paneles de visualización para usuarios finales."
         }
       ],
-      "pdfUrl": "/cv/cv-soporte-sistemas.pdf",
-      "whatsappContext": "systems"
+      "skills": {
+        "technical": "Power BI (DAX Avanzado, Modelado Dimensional Estrella/Copo de Nieve, Power BI Service, Dataflows), SQL (MySQL, PostgreSQL, Optimización de Consultas), Python (Pandas, NumPy, ETL), Excel Avanzado (Power Query, Power Pivot), Cube.js, Git/GitHub, Agentes IA para desarrollo DAX.",
+        "languages": "Español (Nativo), Inglés (A1 - Básico)",
+        "certifications": [
+          {
+            "name": "PL-300T00-A: Microsoft Power BI Data Analyst – Microsoft",
+            "date": "Mayo 2025"
+          },
+          {
+            "name": "Python Project For AI and Application Development – IBM",
+            "date": "Mayo 2025"
+          },
+          {
+            "name": "Certificación Bootcamp ICP Developer en Motoko – DFINITY Foundation",
+            "date": "Junio 2024"
+          }
+        ],
+        "additional": "Pensamiento analítico de negocio, Storytelling con datos, Diseño centrado en el usuario para dashboards ejecutivos, Comunicación asertiva con stakeholders, Metodologías ágiles (Scrum)."
+      }
     },
     {
-      "id": "data-entry",
-      "roleName": "Data Entry y Operaciones",
-      "title": "Especialista en Carga Masiva, Digitalización y Automatización de Datos",
-      "summary": "Especialista en digitalización rápida, depuración exhaustiva, control de calidad y carga masiva de datos con velocidad superior a 70 palabras por minuto y 99.9% de precisión. Experto en automatización de planillas en Excel y Google Sheets mediante macros y scripts para eliminar errores humanos y ahorrar decenas de horas semanales.",
-      "skills": [
-        "Digitación Rápida y Precisa (>70 WPM)",
-        "Excel Avanzado (Macros, VBA, Fórmulas)",
-        "Google Sheets & Apps Script",
-        "Limpieza y Normalización de Datos",
-        "Digitalización y Procesamiento OCR",
-        "Control de Calidad y Validación de Registros",
-        "Carga Masiva en ERPs y CRMs"
+      "id": "ai",
+      "roleName": "Ingeniero de IA",
+      "title": "Ingeniero de IA y Analista de Datos | Python, IA Generativa & Cloud Computing",
+      "summary": "Ingeniero de IA y Tecnólogo en Desarrollo de Sistemas con sólida experiencia en el desarrollo de soluciones inteligentes y automatización con Inteligencia Artificial Generativa. Experto en la creación de pipelines de datos (extracción, transformación y limpieza mediante Python) para garantizar que la información sea adecuada para el análisis y modelos de IA. Cuento con experiencia práctica en Cloud Computing (AWS, Google Cloud), desarrollo backend con Python, y metodologías ágiles (Scrum). Destaco por mi capacidad para implementar soluciones de IA que optimizan procesos operativos y mi pasión por el aprendizaje continuo en tecnologías de vanguardia.",
+      "pdfUrl": "/cv/cv-ingeniero-ia.pdf",
+      "whatsappContext": "ai",
+      "personal": {
+        "name": "Santiago Rendon Castrillon",
+        "title": "Ingeniero de IA y Analista de Datos | Python, IA Generativa & Cloud Computing",
+        "email": "santirendon.castrillon@gmail.com",
+        "phone": "+57 302 323 334 2",
+        "location": "Medellín, Colombia",
+        "website": "https://www.linkedin.com/in/santiago-rendon-castrillon-06056a230/",
+        "github": "",
+        "gitlab": "",
+        "summary": "Ingeniero de IA y Tecnólogo en Desarrollo de Sistemas con sólida experiencia en el desarrollo de soluciones inteligentes y automatización con Inteligencia Artificial Generativa. Experto en la creación de pipelines de datos (extracción, transformación y limpieza mediante Python) para garantizar que la información sea adecuada para el análisis y modelos de IA. Cuento con experiencia práctica en Cloud Computing (AWS, Google Cloud), desarrollo backend con Python, y metodologías ágiles (Scrum). Destaco por mi capacidad para implementar soluciones de IA que optimizan procesos operativos y mi pasión por el aprendizaje continuo en tecnologías de vanguardia."
+      },
+      "education": [
+        {
+          "institution": "Bootcamp de Análisis de Datos",
+          "degree": "Formación Profesional como Analista de Datos (Python, SQL, Power BI, Excel)",
+          "location": "Remoto / Medellín",
+          "startDate": "Ene 2025",
+          "endDate": "Jun 2025",
+          "description": "Especialización en análisis exploratorio de datos, pipelines ETL, consultas relacionales avanzadas en SQL, modelado dimensional y desarrollo de dashboards."
+        },
+        {
+          "institution": "Servicio Nacional de Aprendizaje (SENA)",
+          "degree": "Tecnólogo en Análisis y Desarrollo de Sistemas de Información",
+          "location": "Medellín, Colombia",
+          "startDate": "Ene 2022",
+          "endDate": "Nov 2024",
+          "description": "Formación integral en diseño de bases de datos relacionales, ingeniería de requerimientos, lógica de programación (Python, JavaScript) y metodologías ágiles (Scrum)."
+        },
+        {
+          "institution": "I.E. Comercial Antonio Roldán Betancur",
+          "degree": "Bachiller Técnico en Desarrollo de Software",
+          "location": "Medellín, Colombia",
+          "startDate": "Ene 2020",
+          "endDate": "Nov 2021",
+          "description": "Fundamentos en algoritmos, bases de datos y soporte técnico operativo."
+        }
       ],
       "experience": [
         {
-          "company": "Operaciones & Gestión Documental",
-          "role": "Especialista Senior en Data Entry y Automatización",
-          "period": "2021 - Presente",
-          "achievements": [
-            "Procesamiento y carga de más de 250,000 registros en sistemas ERP con una tasa de precisión del 99.9%.",
-            "Creación de macros en VBA y scripts en Apps Script que automatizaron la conciliación de planillas, ahorrando más de 15 horas de labor manual semanal.",
-            "Estandarización de protocolos de doble validación para evitar duplicidad e inconsistencia en bases de datos de clientes."
-          ]
+          "company": "ePayco by Davivienda",
+          "position": "Analista de Datos y BI (Enfoque en IA y Datos)",
+          "location": "Medellín (Híbrido)",
+          "startDate": "Marzo 2026",
+          "endDate": "Agosto 2026",
+          "description": "• Implementé modelos y soluciones de Inteligencia Artificial Generativa mediante Agentes de IA para la automatización de código y creación de KPIs, reduciendo tiempos operativos en un 25%.\n• Diseñé y ejecuté pipelines de datos utilizando Python y MySQL para la extracción, transformación y limpieza de datos, garantizando información confiable y oportuna para el negocio.\n• Trabajé en la interpretación de información para facilitar la toma de decisiones basada en datos."
         },
         {
-          "company": "Servicios de Captura de Información",
-          "role": "Auxiliar de Digitación y Control de Datos",
-          "period": "2019 - 2021",
-          "achievements": [
-            "Digitalización y tabulación de más de 50,000 expedientes físicos a formatos digitales normalizados cumpliendo tiempos de entrega exigentes.",
-            "Depuración de bases de datos de inventario corrigiendo errores de codificación y formatos en más de 12,000 productos."
-          ]
-        }
-      ],
-      "projects": [
-        {
-          "name": "Sistema Automatizado de Consolidación de Planillas",
-          "description": "Herramienta en Google Sheets + Apps Script que unifica automáticamente reportes diarios de múltiples sucursales en un único consolidado maestro validando campos requeridos.",
-          "technologies": ["Google Sheets", "Google Apps Script", "JavaScript", "Excel VBA"]
+          "company": "Superprof",
+          "position": "Consultor Técnico en Datos y Automatizaciones",
+          "location": "Remoto",
+          "startDate": "Junio 2025",
+          "endDate": "Diciembre 2025",
+          "description": "• Desarrollé e implementé pipelines de datos y flujos ETL en Python para el procesamiento eficiente de información.\n• Diseñé flujos automatizados alineados a los procesos internos, comunicando conceptos técnicos complejos de manera efectiva a los equipos."
         },
         {
-          "name": "Normalizador Masivo de Registros para Migración ERP",
-          "description": "Flujo de depuración y limpieza masiva de datos (nombres, documentos, emails, teléfonos) para preparar 45,000 registros de clientes antes de la migración a un nuevo CRM.",
-          "technologies": ["Excel Power Query", "Python Regex", "CSV / TSV"]
+          "company": "Memoria Abierta – Proyecto Análisis del Conflicto Armado",
+          "position": "Analista de Datos y Transformación Digital",
+          "location": "Remoto",
+          "startDate": "Febrero 2025",
+          "endDate": "Junio 2025",
+          "description": "• Fui responsable de extraer, transformar y limpiar datos sensibles, realizando tratamiento de valores atípicos mediante Python y técnicas estadísticas para adecuarlos al análisis.\n• Ejecuté procesos de minería de datos y análisis exploratorio (EDA) estructurando consultas SQL complejas."
+        },
+        {
+          "company": "Giga Chad LLC",
+          "position": "Analista de Automatización de Procesos con IA",
+          "location": "Remoto",
+          "startDate": "Mayo 2024",
+          "endDate": "Septiembre 2024",
+          "description": "• Desarrollé integraciones y scripts en Python (web scraping) para la extracción masiva y estructuración eficiente de datos desde plataformas web y Google Cloud.\n• Automaticé tareas complejas mediante el uso de Inteligencia Artificial Generativa y APIs de modelos de lenguaje de vanguardia (OpenAI, Anthropic).\n• Optimicé flujos de trabajo de IA que redujeron los tiempos operativos en más del 50%."
+        },
+        {
+          "company": "Dataknow (Daki)",
+          "position": "Practicante en Desarrollo Web Fullstack y Cloud",
+          "location": "Remoto",
+          "startDate": "Agosto 2023",
+          "endDate": "Marzo 2024",
+          "description": "• Construí y desplegué servicios enfocados en Cloud Computing utilizando tecnologías de AWS (Lambda, API Gateway, S3) y Python (Boto3) para el procesamiento de datos.\n• Integré herramientas analíticas y garanticé el rendimiento y la escalabilidad de la infraestructura backend en la nube."
+        },
+        {
+          "company": "Freelance",
+          "position": "Consultor en Bases de Datos & APIs",
+          "location": "Remoto",
+          "startDate": "Octubre 2022",
+          "endDate": "Agosto 2023",
+          "description": "• Diseñé y optimicé esquemas relacionales en MySQL asegurando la calidad y seguridad de los datos para la extracción de información estructurada.\n• Desarrollé integraciones escalables con APIs REST."
         }
       ],
-      "pdfUrl": "/cv/cv-data-entry.pdf",
-      "whatsappContext": "data-entry"
+      "skills": {
+        "technical": "IA y Machine Learning: Inteligencia Artificial Generativa, Agentes de IA, APIs (OpenAI, Anthropic). Desarrollo y Cloud: Python, Cloud Computing (AWS, Google Cloud), Boto3. Ingeniería de Datos: Pipelines de datos, Procesos ETL, Extracción, Transformación y Limpieza de datos, Análisis Exploratorio. Bases de Datos: SQL (MySQL), Bases de Datos Relacionales. Metodologías: Metodologías Ágiles (Scrum).",
+        "languages": "Español (Nativo), Inglés (A1 - Básico)",
+        "certifications": [
+          {
+            "name": "Arquitectura en la nube con Aws y Azure – Talento Tech",
+            "date": "Agosto 2025"
+          },
+          {
+            "name": "Python Project For AI and Application Development – IBM",
+            "date": "Mayo 2025"
+          },
+          {
+            "name": "PL-300T00-A: Microsoft Power BI Data Analyst – Microsoft",
+            "date": "Mayo 2025"
+          },
+          {
+            "name": "Certificación Bootcamp ICP Developer en Motoko – DFINITY Foundation",
+            "date": "Junio 2024"
+          }
+        ],
+        "additional": "Pensamiento analítico y crítico, Orientación a la transformación digital, Capacidad para resolver problemas específicos del negocio, Atención al detalle, Aprendizaje continuo y Trabajo en equipos multifuncionales."
+      }
     }
   ]
 }

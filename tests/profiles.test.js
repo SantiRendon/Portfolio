@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const PROFILES_PATH = path.resolve('src/lib/data/profiles.json');
-const STATIC_CV_DIR = path.resolve('static/cv');
 
 test('profiles.json exists and is valid JSON', () => {
 	assert.ok(fs.existsSync(PROFILES_PATH), 'src/lib/data/profiles.json does not exist');
@@ -14,39 +13,68 @@ test('profiles.json exists and is valid JSON', () => {
 	assert.strictEqual(data.profiles.length, 3, 'Must contain exactly 3 profiles');
 });
 
-test('profiles schema and fields integrity', () => {
+test('profiles schema conforms to cv_template.json with data, systems, and ai roles', () => {
 	const content = fs.readFileSync(PROFILES_PATH, 'utf-8');
 	const { profiles } = JSON.parse(content);
 
-	const expectedIds = ['data', 'systems', 'data-entry'];
+	const expectedIds = ['data', 'systems', 'ai'];
 	const foundIds = profiles.map((p) => p.id);
-	assert.deepStrictEqual(foundIds, expectedIds, 'Profile IDs must match data, systems, data-entry');
+	assert.deepStrictEqual(foundIds, expectedIds, 'Profile IDs must match data, systems, ai');
+
+	const expectedRoles = {
+		data: 'Analista de Datos',
+		systems: 'Desarrollador BI y Sistemas',
+		ai: 'Ingeniero de IA'
+	};
+
+	const expectedPdfs = {
+		data: '/cv/cv-analista-datos.pdf',
+		systems: '/cv/cv-sistemas.pdf',
+		ai: '/cv/cv-ingeniero-ia.pdf'
+	};
 
 	for (const profile of profiles) {
-		assert.ok(typeof profile.id === 'string' && profile.id.length > 0, 'id is required');
-		assert.ok(typeof profile.roleName === 'string' && profile.roleName.length > 0, 'roleName is required');
-		assert.ok(typeof profile.title === 'string' && profile.title.length > 0, 'title is required');
-		assert.ok(typeof profile.summary === 'string' && profile.summary.length > 0, 'summary is required');
-		assert.ok(typeof profile.whatsappContext === 'string' && profile.whatsappContext.length > 0, 'whatsappContext is required');
-		assert.ok(typeof profile.pdfUrl === 'string' && profile.pdfUrl.startsWith('/cv/'), 'pdfUrl must point to /cv/...');
-		assert.ok(profile.pdfUrl.endsWith('.pdf'), 'pdfUrl must end with .pdf');
+		assert.strictEqual(profile.roleName, expectedRoles[profile.id], `roleName mismatch for ${profile.id}`);
+		assert.strictEqual(profile.pdfUrl, expectedPdfs[profile.id], `pdfUrl mismatch for ${profile.id}`);
+		assert.strictEqual(profile.whatsappContext, profile.id, `whatsappContext mismatch for ${profile.id}`);
 
-		assert.ok(Array.isArray(profile.skills) && profile.skills.length > 0, 'skills must be a non-empty array');
+		// 1. Personal section
+		assert.ok(typeof profile.personal === 'object' && profile.personal !== null, 'personal must be an object');
+		assert.ok(typeof profile.personal.name === 'string' && profile.personal.name.length > 0, 'personal.name is required');
+		assert.ok(typeof profile.personal.title === 'string' && profile.personal.title.length > 0, 'personal.title is required');
+		assert.ok(typeof profile.personal.email === 'string' && profile.personal.email.length > 0, 'personal.email is required');
+		assert.ok(typeof profile.personal.phone === 'string' && profile.personal.phone.length > 0, 'personal.phone is required');
+		assert.ok(typeof profile.personal.location === 'string' && profile.personal.location.length > 0, 'personal.location is required');
+		assert.ok(typeof profile.personal.summary === 'string' && profile.personal.summary.length > 0, 'personal.summary is required');
+
+		// 2. Education section
+		assert.ok(Array.isArray(profile.education) && profile.education.length > 0, 'education must be a non-empty array');
+		for (const edu of profile.education) {
+			assert.ok(typeof edu.institution === 'string' && edu.institution.length > 0, 'edu.institution is required');
+			assert.ok(typeof edu.degree === 'string' && edu.degree.length > 0, 'edu.degree is required');
+			assert.ok(typeof edu.location === 'string', 'edu.location is required');
+			assert.ok(typeof edu.startDate === 'string', 'edu.startDate is required');
+			assert.ok(typeof edu.endDate === 'string', 'edu.endDate is required');
+			assert.ok(typeof edu.description === 'string', 'edu.description is required');
+		}
+
+		// 3. Experience section
 		assert.ok(Array.isArray(profile.experience) && profile.experience.length > 0, 'experience must be a non-empty array');
-		assert.ok(Array.isArray(profile.projects) && profile.projects.length > 0, 'projects must be a non-empty array');
-
 		for (const exp of profile.experience) {
 			assert.ok(typeof exp.company === 'string' && exp.company.length > 0, 'exp.company is required');
-			assert.ok(typeof exp.role === 'string' && exp.role.length > 0, 'exp.role is required');
-			assert.ok(typeof exp.period === 'string' && exp.period.length > 0, 'exp.period is required');
-			assert.ok(Array.isArray(exp.achievements) && exp.achievements.length > 0, 'exp.achievements must be non-empty array');
+			assert.ok(typeof exp.position === 'string' && exp.position.length > 0, 'exp.position is required');
+			assert.ok(typeof exp.location === 'string', 'exp.location is required');
+			assert.ok(typeof exp.startDate === 'string', 'exp.startDate is required');
+			assert.ok(typeof exp.endDate === 'string', 'exp.endDate is required');
+			assert.ok(typeof exp.description === 'string' && exp.description.length > 0, 'exp.description is required');
 		}
 
-		for (const proj of profile.projects) {
-			assert.ok(typeof proj.name === 'string' && proj.name.length > 0, 'proj.name is required');
-			assert.ok(typeof proj.description === 'string' && proj.description.length > 0, 'proj.description is required');
-			assert.ok(Array.isArray(proj.technologies) && proj.technologies.length > 0, 'proj.technologies must be non-empty array');
-		}
+		// 4. Skills section
+		assert.ok(typeof profile.skills === 'object' && profile.skills !== null, 'skills must be an object');
+		assert.ok(typeof profile.skills.technical === 'string' && profile.skills.technical.length > 0, 'skills.technical is required');
+		assert.ok(typeof profile.skills.languages === 'string' && profile.skills.languages.length > 0, 'skills.languages is required');
+		assert.ok(Array.isArray(profile.skills.certifications), 'skills.certifications must be an array');
+		assert.ok(typeof profile.skills.additional === 'string' && profile.skills.additional.length > 0, 'skills.additional is required');
 	}
 });
 

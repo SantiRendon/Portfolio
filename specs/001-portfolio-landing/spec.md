@@ -3,16 +3,16 @@ Estado: aprobada
 
 ## Contexto y objetivo
 El usuario requiere una plataforma web personal que cumpla dos funciones complementarias de negocio mediante experiencias de navegación diferenciadas:
-1. **Portafolio profesional (Ruta Principal `/`)**: Orientado a reclutadores, líderes técnicos y empresas contratantes. Presenta una visión integral de la experiencia laboral mediante un selector interactivo de tres roles técnicos (**Analista de Datos**, **Soporte y Sistemas**, y **Data Entry y Operaciones**), alimentados desde una estructura de datos homogénea y con descarga directa de sus currículums en formato PDF.
-2. **Página de aterrizaje comercial (Ruta Dedicada `/servicios`)**: Orientada exclusivamente a la conversión de clientes potenciales provenientes de campañas publicitarias (Meta Ads / Facebook Ads). Presenta una propuesta de valor enfocada en resolver problemas operativos específicos de negocio (dashboards, soporte de infraestructura, automatización y procesamiento masivo de datos), con diseño directo sin distracciones, botón flotante y botones de acción a WhatsApp prioritarios, formulario de contacto ágil y registro de eventos de conversión para atribución publicitaria.
+1. **Portafolio profesional (Ruta Principal `/`)**: Orientado a reclutadores, líderes técnicos y empresas contratantes. Presenta una visión integral de la experiencia laboral mediante un selector interactivo de tres roles técnicos (**Analista de Datos**, **Desarrollador BI y Sistemas**, e **Ingeniero de IA**), alimentados desde una estructura de datos homogénea basada en el esquema estándar de plantilla de CV (`cv_template.json`) y con descarga directa de sus currículums en formato PDF.
+2. **Página de aterrizaje comercial (Ruta Dedicada `/servicios`)**: Orientada exclusivamente a la conversión de clientes potenciales provenientes de campañas publicitarias (Meta Ads / Facebook Ads). Presenta una propuesta de valor enfocada en resolver problemas operativos específicos de negocio (dashboards en Power BI, infraestructura y desarrollo de Business Intelligence, e implementación de soluciones con Inteligencia Artificial y automatización), con diseño directo sin distracciones, botón flotante y botones de acción a WhatsApp prioritarios, formulario de contacto ágil y registro de eventos de conversión para atribución publicitaria.
 
 ## Usuarios
-1. **Reclutador / Evaluador de talento**: Accede a la ruta principal para evaluar trayectoria, competencias y proyectos de un rol técnico específico, visualizando los detalles y descargando el CV correspondiente en PDF.
+1. **Reclutador / Evaluador de talento**: Accede a la ruta principal para evaluar trayectoria, competencias y proyectos de un rol técnico específico (Analista de Datos, Desarrollador BI y Sistemas, o Ingeniero de IA), visualizando los detalles y descargando el CV correspondiente en PDF.
 2. **Cliente potencial (Lead comercial desde anuncios)**: Accede a la landing page dedicada buscando resolver una necesidad urgente o recurrente en su negocio, requiriendo claridad de servicios, prueba de resultados y opciones de contacto inmediato.
 3. **Propietario de la plataforma**: Profesional técnico que administra sus perfiles de forma estructurada, centraliza la captación comercial y mide el retorno de inversión y eventos de sus campañas de publicidad.
 
 ## Historias de usuario
-- **HU-1**: Como reclutador técnico en la página principal, quiero alternar entre los perfiles de Analista de Datos, Soporte/Sistemas y Data Entry, para consultar la experiencia, habilidades y proyectos estructurados pertinentes a cada rol.
+- **HU-1**: Como reclutador técnico en la página principal, quiero alternar entre los perfiles de Analista de Datos, Desarrollador BI y Sistemas, e Ingeniero de IA, para consultar la experiencia, habilidades y proyectos estructurados pertinentes a cada rol.
 - **HU-2**: Como reclutador, quiero descargar una versión formal en PDF del currículum activo con un solo clic, para compartirlo o almacenarlo en procesos de selección.
 - **HU-3**: Como cliente potencial que llega desde un anuncio publicitario a la página dedicada de servicios, quiero encontrar una propuesta de valor concreta sin elementos de distracción externos, para entender con rapidez cómo se resuelven mis requerimientos operativos.
 - **HU-4**: Como cliente potencial en cualquier punto de la navegación, quiero tener acceso inmediato y visible a un botón de WhatsApp (destacado y flotante) con un mensaje preconfigurado, para iniciar una conversación instantánea con el profesional.
@@ -20,8 +20,8 @@ El usuario requiere una plataforma web personal que cumpla dos funciones complem
 - **HU-6**: Como propietario de la plataforma, quiero que cada interacción clave (ingreso a la landing, clics en WhatsApp, envíos de formulario y descargas de CV) emita eventos de seguimiento compatibles con píxeles publicitarios, para auditar y optimizar las campañas de conversión.
 
 ## Definiciones
-- **Perfil de CV**: Conjunto estructurado y uniforme de datos que describe un rol profesional concreto (resumen de perfil, historial de experiencia, habilidades técnicas clasificadas, proyectos destacados y referencia al archivo PDF descargable).
-- **Estructura de Datos Homogénea**: Esquema estándar que comparten todos los perfiles, garantizando consistencia en la presentación de la información sin importar el rol seleccionado.
+- **Perfil de CV**: Conjunto estructurado y uniforme de datos que describe un rol profesional concreto conforme al esquema base de `cv_template.json` (información personal y resumen, formación académica, experiencia laboral detallada y habilidades clasificadas), junto al documento PDF descargable.
+- **Estructura de Datos Homogénea (`cv_template.json`)**: Esquema estándar que define los bloques esenciales de cada perfil: `personal` (nombre, título, contacto, enlaces y resumen), `education` (institución, título, fechas, descripción), `experience` (empresa, cargo, fechas, funciones/logros) y `skills` (competencias técnicas, idiomas, certificaciones y adicionales).
 - **Página de Conversión Dedicada**: Vista web despojada de menús o enlaces externos innecesarios que puedan provocar fugas de tráfico, optimizada para guiar al visitante directamente hacia WhatsApp o el formulario.
 - **Evento de Conversión**: Acción de negocio registrada (evento estándar como PageView, Contact, Lead, o evento personalizado como DownloadCV) para atribución y medición publicitaria.
 
@@ -33,24 +33,24 @@ El usuario requiere una plataforma web personal que cumpla dos funciones complem
   - Ruta de Servicios / Conversión (`/servicios`): Enfocada en captación comercial para tráfico de anuncios, desprovista de menús complejos o enlaces salientes que desvíen al visitante del objetivo de conversión.
 
 ### 2. Portafolio Multi-Perfil y Gestión de CVs
-- **RF-2**: EL SISTEMA consumirá la información de los perfiles profesionales a partir de una estructura de datos estándar y homogénea para los tres roles: *Analista de Datos*, *Soporte y Sistemas*, y *Data Entry y Operaciones*.
-- **RF-3**: EL SISTEMA presentará un selector interactivo de perfil en la ruta de portafolio (`/`) que permita alternar fluidamente entre los tres roles técnicos, seleccionando por defecto el perfil *Analista de Datos* durante la carga inicial.
-- **RF-4**: CUANDO el usuario selecciona un perfil técnico en el selector, EL SISTEMA actualizará instantáneamente en pantalla el resumen profesional, las competencias técnicas, los proyectos demostrativos y el enlace de descarga del CV asociado a dicho rol.
+- **RF-2**: EL SISTEMA consumirá la información de los perfiles profesionales a partir de una estructura de datos estándar y homogénea basada en el esquema de `cv_template.json` (secciones `personal`, `education`, `experience` y `skills`, con enlace al PDF correspondiente) para los tres roles: *Analista de Datos*, *Desarrollador BI y Sistemas*, e *Ingeniero de IA*.
+- **RF-3**: EL SISTEMA presentará un selector interactivo de perfil en la ruta de portafolio (`/`) que permita alternar fluidamente entre los tres roles técnicos (*Analista de Datos*, *Desarrollador BI y Sistemas*, e *Ingeniero de IA*), seleccionando por defecto el perfil *Analista de Datos* durante la carga inicial.
+- **RF-4**: CUANDO el usuario selecciona un perfil técnico en el selector, EL SISTEMA actualizará instantáneamente en pantalla el resumen profesional (`personal.summary`), la experiencia (`experience`), la formación (`education`), las competencias clasificadas (`skills`) y el enlace de descarga del CV asociado a dicho rol.
 - **RF-5**: CUANDO el usuario acciona el botón de descarga de CV, EL SISTEMA iniciará la descarga directa del archivo PDF correspondiente al perfil actualmente seleccionado.
 - **RF-6**: SI el archivo PDF solicitado no estuviera disponible temporalmente o fallara la descarga, ENTONCES EL SISTEMA mostrará un mensaje amigable indicando la situación y ofrecerá un botón para solicitarlo directamente a través de WhatsApp.
 
 ### 3. Landing Page Comercial y Servicios
 - **RF-7**: EL SISTEMA exhibirá en la cabecera de la ruta de conversión (`/servicios`) un titular que declare el servicio freelance principal y el problema operativo resuelto, un subtítulo que especifique el beneficio cuantificable para el negocio y un botón de llamada a la acción principal enlazado a WhatsApp.
-- **RF-8**: EL SISTEMA detallará los servicios freelance clasificados en las tres áreas clave (análisis de datos y dashboards, soporte y mantenimiento de sistemas, carga masiva y automatización de procesos), describiendo entregables tangibles y beneficios de negocio.
-- **RF-9**: EL SISTEMA incluirá una sección de casos de uso y credibilidad con resultados medibles (ej. horas ahorradas en tareas repetitivas, tiempos de respuesta en soporte, visualización de métricas de negocio).
+- **RF-8**: EL SISTEMA detallará los servicios freelance clasificados en las tres áreas clave (análisis de datos y dashboards empresariales, desarrollo de Business Intelligence y sistemas, e ingeniería de inteligencia artificial y automatización de procesos), describiendo entregables tangibles y beneficios de negocio.
+- **RF-9**: EL SISTEMA incluirá una sección de casos de uso y credibilidad con resultados medibles (ej. horas ahorradas en tareas repetitivas mediante IA, tiempos de respuesta en soporte/BI, visualización de métricas de negocio).
 
 ### 4. Canales de Contacto y Conversión
 - **RF-10**: EL SISTEMA mantendrá visible en ambas rutas un botón flotante prioritario de WhatsApp fijado en pantalla, accesible en cualquier punto del desplazamiento vertical tanto en móvil como en escritorio.
 - **RF-11**: CUANDO el usuario pulsa cualquier botón de contacto por WhatsApp (bloque de contenido o botón flotante), EL SISTEMA abrirá la aplicación o versión web de WhatsApp con el mensaje predeterminado correspondiente según el contexto:
   - Botón flotante o contacto general: `"Hola, vi tu portafolio y me gustaría consultar sobre tus servicios."`
   - Sección de Analista de Datos: `"Hola, me interesa una cotización para análisis de datos y dashboards."`
-  - Sección de Soporte y Sistemas: `"Hola, necesito soporte y asesoría en sistemas e infraestructura."`
-  - Sección de Data Entry y Operaciones: `"Hola, requiero apoyo en digitación y automatización de datos."`
+  - Sección de Desarrollador BI y Sistemas: `"Hola, necesito soporte y asesoría en BI y sistemas."`
+  - Sección de Ingeniero de IA: `"Hola, me interesa una asesoría/cotización en soluciones con IA y automatizaciones."`
 - **RF-12**: EL SISTEMA ofrecerá un formulario de contacto directo compuesto por cuatro campos independientes: Nombre (obligatorio), Correo electrónico (obligatorio), Teléfono/WhatsApp (opcional) y Mensaje (obligatorio).
 - **RF-13**: CUANDO el usuario envíe el formulario con todos los campos obligatorios válidos, EL SISTEMA transmitirá los datos a un servicio de recepción de formularios (vía webhook o servicio de entrega de correo), mostrará un mensaje visual de confirmación de recepción en pantalla y limpiará los campos del formulario.
 - **RF-14**: SI el usuario intenta enviar el formulario con datos inválidos (Nombre menor a 2 caracteres, Correo electrónico sin formato estándar usuario@dominio, Teléfono con caracteres no numéricos o Mensaje menor a 10 caracteres), ENTONCES EL SISTEMA impedirá el envío y mostrará mensajes de error contextuales indicando la regla no cumplida junto al campo afectado.
@@ -83,11 +83,11 @@ El usuario requiere una plataforma web personal que cumpla dos funciones complem
 - Módulo de blog o gestión editorial de artículos para esta fase.
 
 ## Criterios de finalización
-- La ruta principal (`/`) carga por defecto el perfil *Analista de Datos*, permite alternar fluidamente entre los 3 perfiles técnicos cargados desde la estructura homogénea y descargar sus respectivos PDFs.
-- La ruta de conversión (`/servicios`) presenta titular, subtítulo cuantificable y llamadas a WhatsApp sin elementos distractores.
-- El botón flotante y los enlaces integrados abren WhatsApp con los textos predeterminados según el perfil o sección activa.
+- La ruta principal (`/`) carga por defecto el perfil *Analista de Datos*, permite alternar fluidamente entre los 3 perfiles técnicos (*Analista de Datos*, *Desarrollador BI y Sistemas*, *Ingeniero de IA*) cargados desde la estructura homogénea `cv_template.json` y descargar sus respectivos PDFs.
+- La ruta de conversión (`/servicios`) presenta titular, subtítulo cuantificable y llamadas a WhatsApp orientadas a las 3 áreas de especialidad sin elementos distractores.
+- El botón flotante y los enlaces integrados abren WhatsApp con los textos predeterminados según el perfil o sección activa (incluyendo la nueva opción de IA).
 - El formulario de contacto valida las reglas mínimas de longitud y formato, maneja estados de carga y remite la información a un servicio de formularios.
 - Los eventos de Meta Pixel (`PageView`, `Contact`, `Lead`, `DownloadCV`) son emitidos con sus parámetros y atribución publicitaria correspondiente.
 
 ## Dudas abiertas
-*Ninguna en esta fase. Todas las definiciones de negocio, navegación y perfiles han sido aclaradas y validadas.*
+*Ninguna en esta fase. Todas las definiciones de negocio, navegación y nuevos perfiles con esquema cv_template.json han sido aclaradas y validadas.*
