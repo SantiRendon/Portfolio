@@ -24,5 +24,5 @@
 - [x] **T8. Ensamblaje de la Ruta Principal (`/`) con portafolio Bento e integración Pixel.** RF-1, RF-2, RF-3, RF-4, RF-5, RF-16, RF-17, RF-19
   - Hecho cuando: La ruta `/` carga por defecto el perfil *Analista de Datos*, permite alternar entre roles, registra los eventos `PageView` y `DownloadCV`, y muestra el botón flotante de WhatsApp.
 
-- [ ] **T9. Ensamblaje de la Landing Comercial (`/servicios`) para campañas de Meta Ads.** RF-1, RF-7, RF-8, RF-9, RF-10, RF-11, RF-12, RF-13, RF-14, RF-15, RF-17, RF-18
+- [x] **T9. Ensamblaje de la Landing Comercial (`/servicios`) para campañas de Meta Ads.** RF-1, RF-7, RF-8, RF-9, RF-10, RF-11, RF-12, RF-13, RF-14, RF-15, RF-17, RF-18
   - Hecho cuando: La ruta `/servicios` presenta la propuesta de valor sin distracciones, el catálogo Bento de los 3 servicios con CTAs directos, formulario de contacto operativo y registro de eventos de conversión (`Contact` y `Lead`).
