@@ -21,7 +21,7 @@
 - [x] **T7. Componente BentoGrid multi-perfil con descarga de CVs y fallback.** RF-3, RF-4, RF-5, RF-6
   - Hecho cuando: `BentoGrid.svelte` actualiza dinámicamente las tarjetas de resumen, experiencia, habilidades y proyectos según el rol seleccionado, permitiendo la descarga directa de su PDF con fallback a WhatsApp en caso de error.
 
-- [ ] **T8. Ensamblaje de la Ruta Principal (`/`) con portafolio Bento e integración Pixel.** RF-1, RF-2, RF-3, RF-4, RF-5, RF-16, RF-17, RF-19
+- [x] **T8. Ensamblaje de la Ruta Principal (`/`) con portafolio Bento e integración Pixel.** RF-1, RF-2, RF-3, RF-4, RF-5, RF-16, RF-17, RF-19
   - Hecho cuando: La ruta `/` carga por defecto el perfil *Analista de Datos*, permite alternar entre roles, registra los eventos `PageView` y `DownloadCV`, y muestra el botón flotante de WhatsApp.
 
 - [ ] **T9. Ensamblaje de la Landing Comercial (`/servicios`) para campañas de Meta Ads.** RF-1, RF-7, RF-8, RF-9, RF-10, RF-11, RF-12, RF-13, RF-14, RF-15, RF-17, RF-18
