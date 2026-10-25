@@ -1,6 +1,6 @@
 # Tareas de Implementación — Spec 001: Portafolio Profesional y Landing Page de Conversión
 
-- [ ] **T1. Clonación del repositorio base, vinculación al repositorio personal e instalación de dependencias.** RF-1
+- [x] **T1. Clonación del repositorio base, vinculación al repositorio personal e instalación de dependencias.** RF-1
   - Hecho cuando: El repositorio base `https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git` está clonado en la raíz de trabajo, el control de versiones remoto `origin` está vinculado a `https://github.com/SantiRendon/Portfolio.git` con push inicial completado, y las dependencias están instaladas y verificadas con compilación exitosa.
 
 - [ ] **T2. Modelado de datos homogéneo en `profiles.json` y recursos estáticos de CVs.** RF-2, RF-4, RF-5
